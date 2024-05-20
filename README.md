@@ -1,2 +1,2 @@
-# KwazyRichMe
+# KwazyRichMe3D
 Orbital Project
