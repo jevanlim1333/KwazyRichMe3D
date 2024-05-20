@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PropertyScript : Tile
+public class Property : Tile
 {
     int level;
     int rent;

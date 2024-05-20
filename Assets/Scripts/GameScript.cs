@@ -10,6 +10,12 @@ public class GameScript : MonoBehaviour
         
     }
 
+    public Token[] arrayOfPlayers;
+    public int currentPlayer;
+    
+    
+
+
     // Update is called once per frame
     void Update()
     {

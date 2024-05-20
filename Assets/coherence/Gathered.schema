@@ -1,0 +1,4 @@
+command _911e6564da2362b43abf8a4fc001d8f5_c4d1bb29347d4d0d9bcf3284d827ea79 [id "7", routing "All"]
+  clientId UInt 
+  worldPosition Vector3 [compression "None"]
+

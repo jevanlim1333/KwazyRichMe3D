@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: RuntimeSettings
   m_EditorClassIdentifier: 
   versionInfo: {fileID: 11400000, guid: 2191b6f902c97477baa32a7919010503, type: 2}
-  runtimeKey: 
-  schemaID: ef2067ca0178f982c1b9f9c4967fe7edb866407f
+  runtimeKey: 88d6a62f6e154a20aa4bfc326c5fa060
+  schemaID: 5ed57f8844fd983332555c0210adb8c60eccc631
   simulatorSlug: 
   localHost: 127.0.0.1
   localWorldUDPPort: 32001
@@ -28,9 +28,9 @@ MonoBehaviour:
   localHttpServerPort: 42006
   localDevelopmentMode: 1
   useDebugStreams: 0
-  organizationID: 
-  projectID: 
-  projectName: 
+  organizationID: cp3rviq2t1cjum07p80g
+  projectID: cp3rviq2t1cjum07p810
+  projectName: Default Project
   defaultTransportMode: 0
   replicationServerToken: 
   playApiEndpoint: https://api.prod.coherence.io/v1/play
