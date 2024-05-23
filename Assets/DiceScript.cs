@@ -5,7 +5,7 @@ using UnityEngine.Events;
 using System.Threading.Tasks;
 
 [RequireComponent(typeof(Rigidbody))]
-public class dice1 : MonoBehaviour
+public class dice : MonoBehaviour
 {
     public Transform[] diceFaces;
     public Rigidbody rb;
@@ -62,7 +62,7 @@ public class dice1 : MonoBehaviour
     {
         _diceIndex = i;
         var randomVariance = Random.Range(-1f, 1f);
-        rb.AddForce(transform.forward * (throwForce + randomVariance), ForceMode.Impulse);
+        rb.AddForce(-transform.up * (throwForce + randomVariance), ForceMode.Impulse);
 
         var randX = Random.Range(0f, 1f);
         var randY = Random.Range(0f, 1f);

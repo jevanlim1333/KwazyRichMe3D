@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 public class DiceThrower : MonoBehaviour
 {
-    public dice1 diceToThrow;
+    public dice diceToThrow;
     public int amountOfDice = 2;
-    public float throwForce = 5f;
+    public float throwForce = 5f;   
     public float rollForce = 10f;
 
     private List<GameObject> _spawnedDice = new List<GameObject> ();
@@ -29,7 +29,7 @@ public class DiceThrower : MonoBehaviour
 
         for (int i = 0; i < amountOfDice; i++) 
         {
-            dice1 dice = Instantiate(diceToThrow, transform.position, transform.rotation);
+            dice dice = Instantiate(diceToThrow, transform.position, transform.rotation);
             _spawnedDice.Add(dice.gameObject);
             dice.RollDice(throwForce, rollForce, i);
             await Task.Yield();
