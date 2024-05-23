@@ -61,7 +61,7 @@ public class dice : MonoBehaviour
     public void RollDice(float throwForce, float rollForce, int i)
     {
         _diceIndex = i;
-        var randomVariance = Random.Range(-1f, 1f);
+        var randomVariance = Random.Range(-10000f, 10000f);
         rb.AddForce(-transform.up * (throwForce + randomVariance), ForceMode.Impulse);
 
         var randX = Random.Range(0f, 1f);

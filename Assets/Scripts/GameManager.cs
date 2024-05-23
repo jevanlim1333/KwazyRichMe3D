@@ -10,7 +10,12 @@ using Photon.Realtime;
 namespace Com.MyCompany.MyGame
 {
     public class GameManager : MonoBehaviourPunCallbacks
-    {
+    {        
+        #region Public Fields
+        [Tooltip("The prefab to use for representing the player")]
+        public GameObject playerPrefab;
+        #endregion
+
         void Start() 
         {
             if (playerPrefab == null)
@@ -23,7 +28,7 @@ namespace Com.MyCompany.MyGame
                 {
                     Debug.LogFormat("We are Instantiating LocalPlayer from {0}", SceneManagerHelper.ActiveSceneName);
                     // we're in a room. spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate
-                    PhotonNetwork.Instantiate(this.playerPrefab.name, new Vector3(0f, 1f, 0f), Quaternion.identity, 0);
+                    PhotonNetwork.Instantiate("Token 1", new Vector3(0f, 5f, 0f), Quaternion.identity, 0);
                 }
                 else
                 {
@@ -65,14 +70,6 @@ namespace Com.MyCompany.MyGame
         {
             SceneManager.LoadScene(0);
         }
-
-        #endregion
-
-        #region Public Fields
-        [Tooltip("The prefab to use for representing the player")]
-        public GameObject playerPrefab;
-
-
 
         #endregion
 

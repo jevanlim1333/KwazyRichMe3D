@@ -69,8 +69,7 @@ namespace Com.MyCompany.MyGame
         /// </summary>
         void Update()
         {
-
-
+            
         }
 
         #if !UNITY_5_4_OR_NEWER
