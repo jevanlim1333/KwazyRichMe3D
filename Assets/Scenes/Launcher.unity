@@ -1082,53 +1082,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 986304954}
   m_CullTransparentMesh: 1
---- !u!1 &1028604912
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1028604914}
-  - component: {fileID: 1028604913}
-  m_Layer: 0
-  m_Name: Launcher
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1028604913
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1028604912}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8237de421b848f4a911dd1a9805c46a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxPlayersPerRoom: 4
-  controlPanel: {fileID: 317551813}
-  progressLabel: {fileID: 986304954}
---- !u!4 &1028604914
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1028604912}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -448.65872, y: -143.43677, z: -169.21921}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1090883057
 GameObject:
   m_ObjectHideFlags: 0
@@ -1210,6 +1163,7 @@ GameObject:
   - component: {fileID: 1121492734}
   - component: {fileID: 1121492733}
   - component: {fileID: 1121492736}
+  - component: {fileID: 1121492737}
   m_Layer: 5
   m_Name: Play Button
   m_TagString: Untagged
@@ -1281,13 +1235,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1028604913}
-        m_TargetAssemblyTypeName: Com.MyCompany.MyGame.Launcher, Assembly-CSharp
-        m_MethodName: Connect
+      - m_Target: {fileID: 1121492736}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1340,80 +1294,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 1121492731}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8237de421b848f4a911dd1a9805c46a, type: 3}
+  m_Script: {fileID: 11500000, guid: e2681b4c5f4df0b47b0a8b305982236d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxPlayersPerRoom: 4
-  controlPanel: {fileID: 317551813}
-  progressLabel: {fileID: 986304954}
---- !u!1001 &1493017944
-PrefabInstance:
+--- !u!114 &1121492737
+MonoBehaviour:
   m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4865065291203838735, guid: d48c00b372f314c4face83e4fb41662f,
-        type: 3}
-      propertyPath: m_Name
-      value: Game Manager
-      objectReference: {fileID: 0}
-    - target: {fileID: 6883024002053633022, guid: d48c00b372f314c4face83e4fb41662f,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 79
-      objectReference: {fileID: 0}
-    - target: {fileID: 6883024002053633022, guid: d48c00b372f314c4face83e4fb41662f,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 187.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6883024002053633022, guid: d48c00b372f314c4face83e4fb41662f,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6883024002053633022, guid: d48c00b372f314c4face83e4fb41662f,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6883024002053633022, guid: d48c00b372f314c4face83e4fb41662f,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6883024002053633022, guid: d48c00b372f314c4face83e4fb41662f,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6883024002053633022, guid: d48c00b372f314c4face83e4fb41662f,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6883024002053633022, guid: d48c00b372f314c4face83e4fb41662f,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6883024002053633022, guid: d48c00b372f314c4face83e4fb41662f,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6883024002053633022, guid: d48c00b372f314c4face83e4fb41662f,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: d48c00b372f314c4face83e4fb41662f, type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1121492731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15895a51081447d46bda466e7e830c08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sceneProcessor: {fileID: 0}
+  _lightProbeUpdating: 0
+  _moveClientHostObjects: 1
+  _setActiveScene: 1
 --- !u!1 &1499225961
 GameObject:
   m_ObjectHideFlags: 0
@@ -1518,7 +1417,6 @@ GameObject:
   - component: {fileID: 1586388693}
   - component: {fileID: 1586388692}
   - component: {fileID: 1586388691}
-  - component: {fileID: 1586388690}
   m_Layer: 5
   m_Name: Name InputField
   m_TagString: Untagged
@@ -1547,18 +1445,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1586388690
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1586388688}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a6830d16fd9c3747854fab2c2fef49c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1586388691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1618,19 +1504,7 @@ MonoBehaviour:
       m_Calls: []
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1586388690}
-        m_TargetAssemblyTypeName: Com.MyCompany.MyGame.PlayerNameInputField, Assembly-CSharp
-        m_MethodName: SetPlayerName
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_CustomCaretColor: 0
   m_SelectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.7529412}
@@ -2451,5 +2325,3 @@ SceneRoots:
   - {fileID: 1644590813}
   - {fileID: 1715825922}
   - {fileID: 1090883060}
-  - {fileID: 1028604914}
-  - {fileID: 1493017944}
