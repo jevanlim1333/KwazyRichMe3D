@@ -8,8 +8,8 @@ public class MainMenu : MonoBehaviour
 
     public void Play() 
     {
-        SceneManager.LoadScene("Game");
-        Debug.Log("Load Game scene");
+        SceneManager.LoadScene("loading");
+        Debug.Log("Load loading scene");
     }
     public void Quit() 
     {

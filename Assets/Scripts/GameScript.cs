@@ -4,17 +4,15 @@ using UnityEngine;
 
 public class GameScript : MonoBehaviour
 {
+    
+    public Token[] arrayOfPlayers;
+    public int currentPlayer;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
-
-    public Token[] arrayOfPlayers;
-    public int currentPlayer;
-    
-    
-
 
     // Update is called once per frame
     void Update()
