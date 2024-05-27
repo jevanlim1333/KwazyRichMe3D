@@ -7,14 +7,16 @@ public class Spawnpoints : MonoBehaviour
 {
     public GameObject playerPrefab;
 
-    public float minX;
-    public float maxX;
-    public float minY;
-    public float maxY;
+    public float xcoord;
+    public float ycoord;
+    public float zcoord;
+    public Material material;
 
     public void Start()
     {
-        Vector2 randomPosition = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY));
-        PhotonNetwork.Instantiate(playerPrefab.name, randomPosition, Quaternion.identity);
+        Vector3 pos = new Vector3(xcoord, ycoord, zcoord);
+        GameObject token = PhotonNetwork.Instantiate(playerPrefab.name, pos, Quaternion.identity);
+        Renderer rend = token.transform.Find("Body").gameObject.GetComponent<Renderer>();
+        rend.material = material;
     }
 }
