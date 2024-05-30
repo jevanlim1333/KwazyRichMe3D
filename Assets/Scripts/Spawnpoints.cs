@@ -11,12 +11,19 @@ public class Spawnpoints : MonoBehaviour
     public float ycoord;
     public float zcoord;
     public Material material;
+    List<Token> listOfToken;
 
     public void Start()
+    {
+        
+    }
+
+    public void spawn()
     {
         Vector3 pos = new Vector3(xcoord, ycoord, zcoord);
         GameObject token = PhotonNetwork.Instantiate(playerPrefab.name, pos, Quaternion.identity);
         Renderer rend = token.transform.Find("Body").gameObject.GetComponent<Renderer>();
         rend.material = material;
     }
+
 }
