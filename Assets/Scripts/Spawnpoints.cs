@@ -11,7 +11,6 @@ public class Spawnpoints : MonoBehaviour
     public float ycoord;
     public float zcoord;
     public Material material;
-    List<Token> listOfToken;
 
     public void Start()
     {
