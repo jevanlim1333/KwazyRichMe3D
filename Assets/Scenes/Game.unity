@@ -11933,6 +11933,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7025dbb6e71949468fb3b9e8491be10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  allRoutes: {fileID: 1620905721}
   spawnpoints:
   - {fileID: 183487443}
   - {fileID: 225136716}

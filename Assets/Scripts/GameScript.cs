@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class GameScript : MonoBehaviour
 {
+    public Route allRoutes;
     public List<Spawnpoints> spawnpoints;
-    public List<Token> listOfTokens;
     
     // Start is called before the first frame update
     void Start()
     {
         for (var i = 0; i < spawnpoints.Count; i++)
         {
-            spawnpoints[i].spawn();
+            spawnpoints[i].spawn(i + 1, allRoutes);
         }
 
     }

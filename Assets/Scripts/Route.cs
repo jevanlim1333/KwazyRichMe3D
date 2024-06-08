@@ -28,4 +28,25 @@ public class Route : MonoBehaviour
     {
         
     }
+
+    // Get the different routes 
+    public List<Vector3> getRoute(int i)
+    {
+        if (i == 1)
+        {
+            return route1;
+        }
+        else if (i == 2)
+        {
+            return route2;
+        }
+        else if (i == 3)
+        {
+            return route3;
+        }
+        else 
+        {
+            return route4;
+        }
+    }
 }

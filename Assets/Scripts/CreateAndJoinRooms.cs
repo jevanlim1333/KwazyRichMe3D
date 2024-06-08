@@ -3,15 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
+using Photon.Realtime;
 
 public class CreateAndJoinRooms : MonoBehaviourPunCallbacks
 {
+    /// <summary>
+    /// The maximum number of players per room. When a room is full, it can't be joined by new players, and so new room will be created.
+    /// </summary>
+    [Tooltip("The maximum number of players per room. When a room is full, it can't be joined by new players, and so new room will be created")]
+    [SerializeField]
+    private byte maxPlayersPerRoom = 4;
     public InputField createInput;
     public InputField joinInput;
     
     public void CreateRoom()
     {
-        PhotonNetwork.CreateRoom(createInput.text);
+        // #Critical: we failed to join a random room, maybe none exists or they are all full. No worries, we create a new room.
+        RoomOptions roomOptions = new RoomOptions();
+        roomOptions.MaxPlayers = maxPlayersPerRoom;
+        PhotonNetwork.CreateRoom(createInput.text, roomOptions);
+        // PhotonNetwork.CreateRoom(createInput.text);
     }
 
     public void JoinRoom()

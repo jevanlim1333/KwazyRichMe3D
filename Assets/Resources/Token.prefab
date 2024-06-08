@@ -74,6 +74,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfec2a7f39fd5194ebd12aa6013553a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  allRoutes: {fileID: 0}
+  thisRoute: []
 --- !u!114 &3891371902491401991
 MonoBehaviour:
   m_ObjectHideFlags: 0
