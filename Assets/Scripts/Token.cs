@@ -2,18 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using Photon.Realtime;
+using System.IO;
 
 public class Token : MonoBehaviour
 {
     PhotonView view;
-    int tokenNumber;
+    GameObject avatar;
+
     public Route allRoutes;
     public List<Vector3> thisRoute;
 
-    private void Start()
+    int tokenNumber;
+ 
+    void Start()
     {
         view = GetComponent<PhotonView>();
-        thisRoute = allRoutes.getRoute(tokenNumber);
     }
 
     void Update()
@@ -29,9 +33,10 @@ public class Token : MonoBehaviour
         tokenNumber = i;
     }
 
-    public void setAllRoutes(Route r)
+    public void setRoutes(Route r)
     {
         allRoutes = r;
+        thisRoute = r.getRoute(tokenNumber);
     }
 
 }

@@ -1237,8 +1237,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c978eb6ebb8344515abeec493484af09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxPlayersPerRoom: 4
   createInput: {fileID: 1508354547}
   joinInput: {fileID: 977473222}
+  playerPrefab: {fileID: 1737345440758373970, guid: 755fe6dc4d122b64bbdf004223761e7a,
+    type: 3}
 --- !u!4 &1683260213
 Transform:
   m_ObjectHideFlags: 0
