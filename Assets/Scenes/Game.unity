@@ -12023,6 +12023,8 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 24f7a5c6e12e08b41a1d699de287758c, type: 2}
   - {fileID: 2100000, guid: 60cdf664e86373b47b8356d790402be4, type: 2}
   - {fileID: 2100000, guid: 131343f4fbbc36b448200b6d25175fb5, type: 2}
+  dt1: {fileID: 1806677795}
+  dt2: {fileID: 434462571}
 --- !u!4 &1533220464
 Transform:
   m_ObjectHideFlags: 0
@@ -15919,7 +15921,7 @@ GameObject:
   - component: {fileID: 2025226480}
   - component: {fileID: 2025226479}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Roll Dice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15989,20 +15991,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1806677795}
-        m_TargetAssemblyTypeName: DiceThrower, Assembly-CSharp
-        m_MethodName: RollDice
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 434462571}
-        m_TargetAssemblyTypeName: DiceThrower, Assembly-CSharp
+      - m_Target: {fileID: 1533220463}
+        m_TargetAssemblyTypeName: GameScript, Assembly-CSharp
         m_MethodName: RollDice
         m_Mode: 1
         m_Arguments:

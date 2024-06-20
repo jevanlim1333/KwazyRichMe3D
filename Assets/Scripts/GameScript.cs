@@ -10,6 +10,10 @@ public class GameScript : MonoBehaviour
     public Route allRoutes;
     public List<Spawnpoints> spawnpoints;
     public Material[] materials;
+    public DiceThrower dt1;
+    public DiceThrower dt2;
+    public List<Token> listOfTokens = new List<Token>();
+    public int currPlayer = 0;
     
     // Start is called before the first frame update
     void Start()
@@ -21,6 +25,7 @@ public class GameScript : MonoBehaviour
         player.transform.Find("Body").gameObject.GetComponent<Renderer>().material = materials[tokenNumber - 1];
         player.GetComponent<Token>().setTokenNumber(tokenNumber);
         player.GetComponent<Token>().setRoutes(allRoutes);
+        instance.listOfTokens.Add(player.GetComponent<Token>());
     }
 
     // Update is called once per frame
@@ -32,5 +37,15 @@ public class GameScript : MonoBehaviour
     void Awake()
     {
 
+    }
+
+    public void RollDice()
+    {
+        dt1.RollDice();
+        dt2.RollDice();
+        
+        Token thisPlayer = listOfTokens[currPlayer];
+        thisPlayer.steps = 5;
+        thisPlayer.move();
     }
 }

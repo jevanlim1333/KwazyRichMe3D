@@ -76,6 +76,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allRoutes: {fileID: 0}
   thisRoute: []
+  steps: 0
 --- !u!114 &3891371902491401991
 MonoBehaviour:
   m_ObjectHideFlags: 0
