@@ -17,6 +17,75 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game.unity
     guid: 820123cc49a091747a1a0ce69d004480
+  - enabled: 1
+    path: Assets/Scenes/fernvale.unity
+    guid: 3e9c8ca5538ff4886abf8b4712725519
+  - enabled: 1
+    path: Assets/Scenes/lucky wheel.unity
+    guid: 8e83a4a4d372f44d69cb3e81e007a9d7
+  - enabled: 1
+    path: Assets/Scenes/bartley.unity
+    guid: 0722abd7a28ff4a33bd98ea39d223d4b
+  - enabled: 1
+    path: Assets/Scenes/bedok.unity
+    guid: bc128fc0db8a649bf920a47f620ad970
+  - enabled: 1
+    path: Assets/Scenes/bugis.unity
+    guid: 34eb09191938e4538bb79fb040bd6305
+  - enabled: 1
+    path: Assets/Scenes/dakota.unity
+    guid: bd30ace0e51b449a3ab1db2bfd2f5027
+  - enabled: 1
+    path: Assets/Scenes/defu.unity
+    guid: a5f41a459524a41b18f049b9197534b2
+  - enabled: 1
+    path: Assets/Scenes/maxwell.unity
+    guid: 6b3b6d27a92e74a409d01b1512e60013
+  - enabled: 1
+    path: Assets/Scenes/mayflower.unity
+    guid: c637c30a75a844a219434486fd809e65
+  - enabled: 1
+    path: Assets/Scenes/meridian.unity
+    guid: 4cfeffee9fc554287a1eae917063cc2f
+  - enabled: 1
+    path: Assets/Scenes/novena.unity
+    guid: 1370ee7558b554a55a9bbe9255f66553
+  - enabled: 1
+    path: Assets/Scenes/punggol.unity
+    guid: c928ab23118e24e149ad215589e38a40
+  - enabled: 1
+    path: Assets/Scenes/sengkang.unity
+    guid: f6247659f26944ddf920aa98e8ab893d
+  - enabled: 1
+    path: Assets/Scenes/somerset.unity
+    guid: 4f0e9451c5b6c4378bab189f6efbde91
+  - enabled: 1
+    path: Assets/Scenes/ubi.unity
+    guid: ac5d9c423a4e54f87843bd96c8f624b0
+  - enabled: 1
+    path: Assets/Scenes/yishun.unity
+    guid: 82d799e7802ac440e89a2787fe04d9d4
+  - enabled: 1
+    path: Assets/Scenes/eunos.unity
+    guid: 65e51ae1043624acf8977cddf34a5921
+  - enabled: 1
+    path: Assets/Scenes/havelock.unity
+    guid: cccece5a5f2af4f4cae80542634be7f3
+  - enabled: 1
+    path: Assets/Scenes/hillview.unity
+    guid: 71f3ef3ee4fe04552b5642d378ac200c
+  - enabled: 1
+    path: Assets/Scenes/kovan.unity
+    guid: cbb9748e09f2849fe96301dc4d95ab60
+  - enabled: 1
+    path: Assets/Scenes/loyang.unity
+    guid: 95d4fd0f101d24db0a3b373558d66da2
+  - enabled: 1
+    path: Assets/Scenes/marymount.unity
+    guid: 2704e28d1e50e43f7ace0d443e7f1f2e
+  - enabled: 1
+    path: Assets/Scenes/dover.unity
+    guid: 21df4d97bbad24d1b985c5c2a7fd31b8
   m_configObjects:
     com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000,
       guid: 3c2c4c1d71391124fac62537a4af9ee6, type: 2}
