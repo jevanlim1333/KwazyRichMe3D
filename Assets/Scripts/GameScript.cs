@@ -9,10 +9,10 @@ public class GameScript : MonoBehaviour
     public static GameScript instance;
     public Route allRoutes;
     public List<Spawnpoints> spawnpoints;
-    public Material[] materials;
+    public List<string> tokenPrefabs;
+    public List<GameObject> listOfTokens = new List<GameObject>();
     public DiceThrower dt1;
     public DiceThrower dt2;
-    public List<Token> listOfTokens = new List<Token>();
     public int currPlayer = 0;
     
     // Start is called before the first frame update
@@ -20,12 +20,11 @@ public class GameScript : MonoBehaviour
     {
         instance = this;
         int tokenNumber = PhotonNetwork.LocalPlayer.ActorNumber;
-        Debug.Log("this tokenNumber is " + tokenNumber);
-        GameObject player = PhotonNetwork.Instantiate("Token", spawnpoints[tokenNumber - 1].GetComponent<Transform>().position, Quaternion.identity);
-        player.transform.Find("Body").gameObject.GetComponent<Renderer>().material = materials[tokenNumber - 1];
+        tokenPrefabs = new List<string>{"Token1", "Token2", "Token3", "Token4"};
+        GameObject player = PhotonNetwork.Instantiate(tokenPrefabs[tokenNumber - 1], spawnpoints[tokenNumber - 1].GetComponent<Transform>().position, Quaternion.identity);
         player.GetComponent<Token>().setTokenNumber(tokenNumber);
         player.GetComponent<Token>().setRoutes(allRoutes);
-        instance.listOfTokens.Add(player.GetComponent<Token>());
+        instance.listOfTokens.Add(player);
     }
 
     // Update is called once per frame
@@ -44,8 +43,8 @@ public class GameScript : MonoBehaviour
         dt1.RollDice();
         dt2.RollDice();
         
-        Token thisPlayer = listOfTokens[currPlayer];
-        thisPlayer.steps = 5;
-        thisPlayer.move();
+        GameObject thisPlayer = listOfTokens[currPlayer];
+        Debug.Log("GameScript calling Token.move");
+        thisPlayer.GetComponent<Token>().move(5);
     }
 }

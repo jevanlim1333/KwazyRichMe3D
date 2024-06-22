@@ -12,9 +12,6 @@ public class Token : MonoBehaviour
     public Route allRoutes;
     public List<Vector3> thisRoute;
     int currPos = 0;
-    public int steps = 0;
-    bool isMoving = false;
-
     int tokenNumber;
  
     void Start()
@@ -41,37 +38,23 @@ public class Token : MonoBehaviour
         thisRoute = r.getRoute(tokenNumber);
     }
 
-    public IEnumerator move()
+    public void move(int steps)
     {
-        if (isMoving)
+        Debug.Log("start of move");
+        int stepsToMove = steps;
+        Debug.Log("stepsToMove = " + steps);
+        bool isMoving = false;
+        while (stepsToMove > 0 && isMoving == false)
         {
-            Debug.Log("1");
-            yield break;
-        }
-        Debug.Log("2");
-        isMoving = true;
-
-        while (steps > 0)
-        {
-            Debug.Log("3");
+            isMoving = true;
             Vector3 nextPos = thisRoute[currPos + 1];
-            while (moveToNextTile(nextPos))
-            {
-                Debug.Log("4");
-                yield return null;
-            }
-            Debug.Log("5");
-            yield return new WaitForSeconds(0.1f);
-            steps--;
+            Debug.Log("moving from " + transform.position + "to " + nextPos);
+            transform.position = Vector3.MoveTowards(transform.position, nextPos, 20000f * Time.deltaTime);
+            stepsToMove--;
             currPos++;
+            isMoving = false;
         }
-        Debug.Log("6");
-        isMoving = false;
-    }
-
-    bool moveToNextTile(Vector3 target)
-    {
-        return target != (transform.position = Vector3.MoveTowards(transform.position, target, 2f * Time.deltaTime));
+        Debug.Log("moved");
     }
 
 }
