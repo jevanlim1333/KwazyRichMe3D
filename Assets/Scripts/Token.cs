@@ -17,14 +17,12 @@ public class Token : MonoBehaviour
     void Start()
     {
         view = GetComponent<PhotonView>();
+        transform.Rotate(0, 90, 0, Space.Self);
     }
 
     void Update()
     {
-        if (view.IsMine)
-        {
-            // continue
-        }
+
     }
 
     public void setTokenNumber(int i)
@@ -49,12 +47,36 @@ public class Token : MonoBehaviour
             isMoving = true;
             Vector3 nextPos = thisRoute[currPos + 1];
             Debug.Log("moving from " + transform.position + "to " + nextPos);
-            transform.position = Vector3.MoveTowards(transform.position, nextPos, 20000f * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, nextPos, 30000f * Time.deltaTime);
             stepsToMove--;
             currPos++;
+            checkRotation();
             isMoving = false;
         }
         Debug.Log("moved");
+    }
+
+    public void checkRotation()
+    {
+        if (currPos == 0)
+        {
+            transform.Rotate(0, 90, 0, Space.Self);
+        }
+
+        if (currPos == 10)
+        {
+            transform.Rotate(0, 180, 0, Space.Self);
+        }
+
+        if (currPos == 20)
+        {
+            transform.Rotate(0, -90, 0, Space.Self);
+        }
+
+        if (currPos == 30)
+        {
+            transform.Rotate(0, 0, 0, Space.Self);
+        }
     }
 
 }
