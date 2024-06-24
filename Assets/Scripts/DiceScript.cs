@@ -15,8 +15,6 @@ public class dice : MonoBehaviour
     private bool _hasStoppedRolling;
     private bool _delayFinished;
 
-    public static UnityAction<int, int> OnDiceResult;
-
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -51,9 +49,17 @@ public class dice : MonoBehaviour
             }
         }
 
-        Debug.Log($"Dice result {topFace + 1}");
+        Debug.Log("Dice " + _diceIndex + " result " + $"{topFace + 1}");
 
-        OnDiceResult?.Invoke(_diceIndex, topFace + 1);
+        if (_diceIndex == 1)
+        {
+            GameScript.instance.dice1result = topFace + 1;
+        }
+
+        if (_diceIndex == 2)
+        {
+            GameScript.instance.dice2result = topFace + 1;
+        }
 
         return topFace + 1;
     }

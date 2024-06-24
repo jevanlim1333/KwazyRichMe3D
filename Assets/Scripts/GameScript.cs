@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
+using System.Threading.Tasks;
 
 public class GameScript : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class GameScript : MonoBehaviour
     public DiceThrower dt1;
     public DiceThrower dt2;
     public int currPlayer = 0;
+    public int dice1result;
+    public int dice2result;
     
     // Start is called before the first frame update
     void Start()
@@ -45,6 +48,6 @@ public class GameScript : MonoBehaviour
         
         GameObject thisPlayer = listOfTokens[currPlayer];
         Debug.Log("GameScript calling Token.move");
-        thisPlayer.GetComponent<Token>().move(5);
+        thisPlayer.GetComponent<Token>().move(dice1result + dice2result);
     }
 }

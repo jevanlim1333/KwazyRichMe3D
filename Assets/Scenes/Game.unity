@@ -5945,9 +5945,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   diceToThrow: {fileID: -6499968845179319203, guid: f0f31c7cff5df4a0aaea384830e1800b,
     type: 3}
-  amountOfDice: 1
-  throwForce: 50000
-  rollForce: 1000
+  diceThrowerNumber: 2
+  throwForce: 75000
+  rollForce: 10000
 --- !u!4 &434462572
 Transform:
   m_ObjectHideFlags: 0
@@ -5956,13 +5956,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 434462570}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.38268343, w: 0.92387956}
+  m_LocalRotation: {x: 0.46193978, y: 0.19134173, z: 0.19134173, w: 0.84462327}
   m_LocalPosition: {x: 300, y: 900, z: 300}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45}
+  m_LocalEulerAnglesHint: {x: 45, y: 45, z: 45}
 --- !u!1 &446910447
 GameObject:
   m_ObjectHideFlags: 0
@@ -16199,6 +16199,8 @@ MonoBehaviour:
   dt1: {fileID: 1806677795}
   dt2: {fileID: 434462571}
   currPlayer: 0
+  dice1result: 0
+  dice2result: 0
 --- !u!4 &1533220464
 Transform:
   m_ObjectHideFlags: 0
@@ -19382,9 +19384,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   diceToThrow: {fileID: -6499968845179319203, guid: f0f31c7cff5df4a0aaea384830e1800b,
     type: 3}
-  amountOfDice: 1
+  diceThrowerNumber: 1
   throwForce: 50000
-  rollForce: 1000
+  rollForce: 5000
 --- !u!4 &1806677796
 Transform:
   m_ObjectHideFlags: 0
@@ -19393,13 +19395,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1806677794}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.38268343, w: 0.92387956}
+  m_LocalRotation: {x: 0.46193978, y: 0.19134173, z: 0.19134173, w: 0.84462327}
   m_LocalPosition: {x: -300, y: 900, z: -300}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45}
+  m_LocalEulerAnglesHint: {x: 45, y: 45, z: 45}
 --- !u!1 &1827967915
 GameObject:
   m_ObjectHideFlags: 0
