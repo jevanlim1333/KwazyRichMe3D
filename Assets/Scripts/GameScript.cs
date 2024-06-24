@@ -14,9 +14,9 @@ public class GameScript : MonoBehaviour
     public List<GameObject> listOfTokens = new List<GameObject>();
     public DiceThrower dt1;
     public DiceThrower dt2;
-    public int currPlayer = 0;
     public int dice1result;
     public int dice2result;
+    public int currPlayer = 0;
     
     // Start is called before the first frame update
     void Start()
@@ -43,11 +43,13 @@ public class GameScript : MonoBehaviour
 
     public void RollDice()
     {
+        Debug.Log("GameScript Roll Dice Called");
         dt1.RollDice();
         dt2.RollDice();
         
         GameObject thisPlayer = listOfTokens[currPlayer];
         Debug.Log("GameScript calling Token.move");
         thisPlayer.GetComponent<Token>().move(dice1result + dice2result);
+        Debug.Log("GameScript Roll Dice End");
     }
 }

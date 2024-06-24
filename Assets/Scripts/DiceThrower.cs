@@ -18,8 +18,9 @@ public class DiceThrower : MonoBehaviour
         
     }
 
-    public async void RollDice()
+    public void RollDice()
     {
+        Debug.Log("Dice Thrower Roll Dice Called");
         if (diceToThrow == null) return;
 
         foreach (var die in _spawnedDice)
@@ -30,7 +31,8 @@ public class DiceThrower : MonoBehaviour
         dice dice = Instantiate(diceToThrow, transform.position, transform.rotation);
         _spawnedDice.Add(dice.gameObject);
         dice.RollDice(throwForce, rollForce, diceThrowerNumber);
-        await Task.Yield();
+
+        Debug.Log("Dice Thrower Roll Dice End");
     }
 
 }
