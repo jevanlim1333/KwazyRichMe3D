@@ -20,4 +20,8 @@ public class fernvale : MonoBehaviour
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("fernvale");
     }
+    public void closeFernvale()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Game");
+    }
 }

@@ -19,4 +19,8 @@ public class eunos : MonoBehaviour
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("eunos");
     }
+    public void closeEunos()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Game");
+    }
 }

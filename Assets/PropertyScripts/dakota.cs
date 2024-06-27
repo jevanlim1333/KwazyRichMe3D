@@ -19,4 +19,8 @@ public class dakota : MonoBehaviour
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("dakota");
     }
+    public void closeDakota()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Game");
+    }
 }

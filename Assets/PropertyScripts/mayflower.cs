@@ -20,4 +20,8 @@ public class mayflower : MonoBehaviour
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("mayflower");
     }
+    public void closeMayflower()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Game");
+    }
 }

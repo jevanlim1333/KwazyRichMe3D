@@ -19,4 +19,8 @@ public class maxwell : MonoBehaviour
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("maxwell");
     }
+    public void closeMaxwell()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Game");
+    }
 }

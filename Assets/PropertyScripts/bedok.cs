@@ -19,4 +19,8 @@ public class bedok : MonoBehaviour
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("bedok");
     }
+    public void closeBedok()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Game");
+    }
 }

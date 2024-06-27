@@ -19,4 +19,8 @@ public class punggol : MonoBehaviour
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("punggol");
     }
+    public void closePunggol()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Game");
+    }
 }

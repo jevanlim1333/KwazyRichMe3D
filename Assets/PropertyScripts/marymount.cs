@@ -19,4 +19,8 @@ public class marymount : MonoBehaviour
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("marymount");
     }
+    public void closeMarymount()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Game");
+    }
 }

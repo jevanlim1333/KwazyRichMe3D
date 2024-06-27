@@ -19,4 +19,8 @@ public class ubi : MonoBehaviour
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("ubi");
     }
+    public void closeUbi()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Game");
+    }
 }

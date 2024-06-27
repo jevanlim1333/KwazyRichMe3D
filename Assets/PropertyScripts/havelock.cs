@@ -19,4 +19,8 @@ public class havelock : MonoBehaviour
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("havelock");
     }
+    public void closeHavelock()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Game");
+    }
 }

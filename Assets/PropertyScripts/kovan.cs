@@ -20,4 +20,8 @@ public class kovan : MonoBehaviour
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("kovan");
     }
+    public void closeKovan()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Game");
+    }
 }

@@ -19,4 +19,8 @@ public class sengkang : MonoBehaviour
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("sengkang");
     }
+    public void closeSengkang()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Game");
+    }
 }

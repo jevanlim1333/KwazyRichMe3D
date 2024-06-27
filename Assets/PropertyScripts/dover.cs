@@ -20,4 +20,9 @@ public class dover : MonoBehaviour
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("dover");
     }
+
+    public void closeDover()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Game");
+    }
 }

@@ -20,4 +20,8 @@ public class loyang : MonoBehaviour
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("loyang");
     }
+    public void closeLoyang()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Game");
+    }
 }

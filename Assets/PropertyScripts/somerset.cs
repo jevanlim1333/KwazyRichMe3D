@@ -19,4 +19,8 @@ public class somerset : MonoBehaviour
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("somerset");
     }
+    public void closeSomerset()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Game");
+    }
 }

@@ -19,4 +19,8 @@ public class meridian : MonoBehaviour
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("meridian");
     }
+    public void closeMeridian()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Game");
+    }
 }

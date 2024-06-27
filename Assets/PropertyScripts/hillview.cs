@@ -19,4 +19,8 @@ public class hillview : MonoBehaviour
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("hillview");
     }
+    public void closeHillview()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Game");
+    }
 }

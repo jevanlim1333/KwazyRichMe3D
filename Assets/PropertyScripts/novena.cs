@@ -19,4 +19,8 @@ public class novena : MonoBehaviour
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("novena");
     }
+    public void closeNovena()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Game");
+    }
 }

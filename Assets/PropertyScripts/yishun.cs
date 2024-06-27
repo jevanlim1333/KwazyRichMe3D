@@ -19,4 +19,8 @@ public class yishun : MonoBehaviour
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("yishun");
     }
+    public void closeYishun()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Game");
+    }
 }

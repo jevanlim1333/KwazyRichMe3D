@@ -20,4 +20,8 @@ public class defu : MonoBehaviour
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("defu");
     }
+    public void closeDefu()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Game");
+    }
 }

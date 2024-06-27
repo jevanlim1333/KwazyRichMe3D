@@ -19,4 +19,8 @@ public class bugis : MonoBehaviour
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("bugis");
     }
+    public void closeBugis()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Game");
+    }
 }
