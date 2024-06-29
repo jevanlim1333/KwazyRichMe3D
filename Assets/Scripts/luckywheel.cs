@@ -31,4 +31,13 @@ public class luckywheel : MonoBehaviour
         });
     }
 
+    public void openTreats()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("lucky wheel");
+    }
+    public void closeTreats()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Game");
+    }
+
 }
