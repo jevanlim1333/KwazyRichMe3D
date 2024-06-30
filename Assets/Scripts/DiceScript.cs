@@ -13,7 +13,6 @@ public class dice : MonoBehaviour
     public int _diceIndex = -1;
 
     public bool _hasStoppedRolling;
-    private bool _delayFinished;
 
     private void Awake()
     {
@@ -46,7 +45,7 @@ public class dice : MonoBehaviour
         return topFace + 1;
     }
 
-    public async void RollDice(float throwForce, float rollForce, int i)
+    public void RollDice(float throwForce, float rollForce, int i)
     {
         Debug.Log("Dice Roll Dice Called");
         _diceIndex = i;
@@ -75,7 +74,6 @@ public class dice : MonoBehaviour
     private async void DelayResult()
     {
         await Task.Delay(1000);
-        _delayFinished = true;
     }
 
     public void getResult()

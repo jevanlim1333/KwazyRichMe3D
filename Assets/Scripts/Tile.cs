@@ -5,7 +5,7 @@ using UnityEngine;
 public class Tile : MonoBehaviour
 {
     public int tileNumber;
-    float height = 50;
+    float height = 10;
     public Vector3 p1;
     public Vector3 p2;
     public Vector3 p3;

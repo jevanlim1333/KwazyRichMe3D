@@ -58,24 +58,9 @@ public class Token : MonoBehaviour
 
     public void checkRotation()
     {
-        if (currPos == 0)
+        if (currPos == 0 || currPos == 10 || currPos == 20 || currPos == 30)
         {
             transform.Rotate(0, 90, 0, Space.Self);
-        }
-
-        if (currPos == 10)
-        {
-            transform.Rotate(0, 180, 0, Space.Self);
-        }
-
-        if (currPos == 20)
-        {
-            transform.Rotate(0, -90, 0, Space.Self);
-        }
-
-        if (currPos == 30)
-        {
-            transform.Rotate(0, 0, 0, Space.Self);
         }
     }
 
