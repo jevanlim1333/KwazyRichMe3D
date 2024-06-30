@@ -29,7 +29,7 @@ public class Tile : MonoBehaviour
     public void getPos()
     {
         p1 = new Vector3(x1, height, z1);
-        p2 = new Vector3(x2, height, z1);
+        p2 = new Vector3(x2, height, z2);
         p3 = new Vector3(x3, height, z3);
         p4 = new Vector3(x4, height, z4);
     }
@@ -62,14 +62,14 @@ public class Tile : MonoBehaviour
 
         if (tileNumber == 0 || tileNumber == 10 || tileNumber == 20 || tileNumber == 30)
         {
-            x1 = transform.position.z + 50;
-            x2 = transform.position.z + 50;
-            x3 = transform.position.z - 50;
-            x4 = transform.position.z - 50;
-            z1 = transform.position.x + 50;
-            z2 = transform.position.x + 24;
-            z3 = transform.position.x - 24; 
-            z4 = transform.position.x - 72;
+            x1 = transform.position.x + 50;
+            x2 = transform.position.x + 50;
+            x3 = transform.position.x - 50;
+            x4 = transform.position.x - 50;
+            z1 = transform.position.z + 50;
+            z2 = transform.position.z - 50;
+            z3 = transform.position.z + 50; 
+            z4 = transform.position.z - 50;
         }
     }
 

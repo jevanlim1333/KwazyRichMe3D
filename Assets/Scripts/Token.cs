@@ -45,11 +45,28 @@ public class Token : MonoBehaviour
         while (stepsToMove > 0 && isMoving == false)
         {
             isMoving = true;
-            Vector3 nextPos = thisRoute[currPos + 1];
+            Vector3 nextPos;
+
+            if (currPos == 39)
+            {
+                nextPos = thisRoute[0];
+            }
+            else {
+                nextPos = thisRoute[currPos + 1];
+            }
+
             Debug.Log("moving from " + transform.position + "to " + nextPos);
-            transform.position = Vector3.MoveTowards(transform.position, nextPos, 50000f * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, nextPos, 750000f * Time.deltaTime);
             stepsToMove--;
-            currPos++;
+
+            if (currPos == 39)
+            {
+                currPos = 0;
+            }
+            else {
+                currPos++;
+            }
+
             checkRotation();
             isMoving = false;
         }
