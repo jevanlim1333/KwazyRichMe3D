@@ -9058,7 +9058,7 @@ GameObject:
   - component: {fileID: 650910844}
   - component: {fileID: 650910843}
   m_Layer: 5
-  m_Name: Canvas (1)
+  m_Name: Background Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19388,8 +19388,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 70
+  m_fontSizeBase: 70
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -23223,8 +23223,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 120.79385, y: 57.322525}
-  m_SizeDelta: {x: 217.9853, y: 64.0833}
+  m_AnchoredPosition: {x: 410, y: 80}
+  m_SizeDelta: {x: 800, y: 140}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2025226479
 MonoBehaviour:
