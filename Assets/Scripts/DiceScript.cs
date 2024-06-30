@@ -46,7 +46,7 @@ public class dice : MonoBehaviour
         return topFace + 1;
     }
 
-    public void RollDice(float throwForce, float rollForce, int i)
+    public async void RollDice(float throwForce, float rollForce, int i)
     {
         Debug.Log("Dice Roll Dice Called");
         _diceIndex = i;
@@ -59,33 +59,39 @@ public class dice : MonoBehaviour
 
         rb.AddTorque(new Vector3(randX, randY, randZ) * (rollForce + randomVariance), ForceMode.Impulse);
 
+        DelayResult();
+
         while (!_hasStoppedRolling)
         {
-            getResult();
+            if (rb.velocity.sqrMagnitude == 0f) 
+            {
+                getResult();
+            }
         }
         
         Debug.Log("Dice Roll Dice End");
     }
 
-    public void getResult()
+    private async void DelayResult()
     {
-        if (rb.velocity.sqrMagnitude == 0f) 
-        {
-            if (_diceIndex == 1)
-            {
-                GameScript.instance.dice1result = GetNumberOnTopFace();
-                Debug.Log("Dice 1 result " + GameScript.instance.dice1result);
-            }
-                
-            if (_diceIndex == 2)
-            {
-                GameScript.instance.dice2result = GetNumberOnTopFace();
-                Debug.Log("Dice 2 result " + GameScript.instance.dice2result);
-            }
-
-            _hasStoppedRolling = true;
-        }
+        await Task.Delay(1000);
+        _delayFinished = true;
     }
 
-
+    public void getResult()
+    {
+        if (_diceIndex == 1)
+        {
+            GameScript.instance.dice1result = GetNumberOnTopFace();
+            Debug.Log("Dice 1 result " + GameScript.instance.dice1result);
+        }
+            
+        if (_diceIndex == 2)
+        {
+            GameScript.instance.dice2result = GetNumberOnTopFace();
+            Debug.Log("Dice 2 result " + GameScript.instance.dice2result);
+        }
+        _hasStoppedRolling = true;
+    }
 }
+

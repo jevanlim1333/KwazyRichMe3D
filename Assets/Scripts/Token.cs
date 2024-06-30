@@ -47,7 +47,7 @@ public class Token : MonoBehaviour
             isMoving = true;
             Vector3 nextPos = thisRoute[currPos + 1];
             Debug.Log("moving from " + transform.position + "to " + nextPos);
-            transform.position = Vector3.MoveTowards(transform.position, nextPos, 30000f * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, nextPos, 50000f * Time.deltaTime);
             stepsToMove--;
             currPos++;
             checkRotation();
