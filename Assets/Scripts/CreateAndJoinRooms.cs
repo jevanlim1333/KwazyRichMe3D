@@ -13,12 +13,14 @@ public class CreateAndJoinRooms : MonoBehaviourPunCallbacks
     [Tooltip("The maximum number of players per room. When a room is full, it can't be joined by new players, and so new room will be created")]
     [SerializeField]
     private byte maxPlayersPerRoom = 4;
+    public InputField playerNickname;
     public InputField createInput;
     public InputField joinInput;
     
     public void CreateRoom()
     {
         // #Critical: we failed to join a random room, maybe none exists or they are all full. No worries, we create a new room.
+        PhotonNetwork.NickName = playerNickname.text;
         RoomOptions roomOptions = new RoomOptions();
         roomOptions.MaxPlayers = maxPlayersPerRoom;
         PhotonNetwork.CreateRoom(createInput.text, roomOptions);
@@ -32,6 +34,7 @@ public class CreateAndJoinRooms : MonoBehaviourPunCallbacks
 
     public override void OnJoinedRoom()
     {
+        PhotonNetwork.NickName = playerNickname.text;
         PhotonNetwork.LoadLevel("Game");
     }
 }
