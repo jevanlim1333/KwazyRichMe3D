@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 public class DiceThrower : MonoBehaviour
 {
     public dice diceToThrow;
-    public int amountOfDice = 2;
+    public int diceThrowerNumber;
     public float throwForce = 5f;   
     public float rollForce = 10f;
 
@@ -20,6 +20,7 @@ public class DiceThrower : MonoBehaviour
 
     public async void RollDice()
     {
+        Debug.Log("Dice Thrower Roll Dice Called");
         if (diceToThrow == null) return;
 
         foreach (var die in _spawnedDice)
@@ -27,13 +28,12 @@ public class DiceThrower : MonoBehaviour
             Destroy(die);
         }
 
-        for (int i = 0; i < amountOfDice; i++) 
-        {
-            dice dice = Instantiate(diceToThrow, transform.position, transform.rotation);
-            _spawnedDice.Add(dice.gameObject);
-            dice.RollDice(throwForce, rollForce, i);
-            await Task.Yield();
-        }
+        dice dice = Instantiate(diceToThrow, transform.position, transform.rotation);
+        _spawnedDice.Add(dice.gameObject);
+        dice.RollDice(throwForce, rollForce, diceThrowerNumber);
+        await Task.Yield();
+
+        Debug.Log("Dice Thrower Roll Dice End");
     }
 
 }

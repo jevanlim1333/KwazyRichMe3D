@@ -15,6 +15,7 @@ public class Route : MonoBehaviour
     {
         foreach (Tile tile in tilesArray)
         {
+            tile.setPos();
             tile.getPos();
             route1.Add(tile.p1);
             route2.Add(tile.p2);

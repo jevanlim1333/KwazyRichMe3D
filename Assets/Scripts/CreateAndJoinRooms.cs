@@ -23,15 +23,18 @@ public class CreateAndJoinRooms : MonoBehaviourPunCallbacks
         roomOptions.MaxPlayers = maxPlayersPerRoom;
         PhotonNetwork.CreateRoom(createInput.text, roomOptions);
         // PhotonNetwork.CreateRoom(createInput.text);
+        Debug.Log("Creating room, Load game scene");
     }
 
     public void JoinRoom()
     {
         PhotonNetwork.JoinRoom(joinInput.text);
+        Debug.Log("Joining room, Load game scene");
     }
 
     public override void OnJoinedRoom()
     {
         PhotonNetwork.LoadLevel("Game");
+        Debug.Log("Game Scene Loaded");
     }
 }
