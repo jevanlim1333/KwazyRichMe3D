@@ -16,7 +16,10 @@ public class GameScript : MonoBehaviour
     public DiceThrower dt2;
     public int dice1result;
     public int dice2result;
+    public bool dice1move;
+    public bool dice2move;
     public int currPlayer = 0;
+    public BonesCounter bonesCounter;
     
     // Start is called before the first frame update
     void Start()
@@ -25,15 +28,26 @@ public class GameScript : MonoBehaviour
         int tokenNumber = PhotonNetwork.LocalPlayer.ActorNumber;
         tokenPrefabs = new List<string>{"Token1", "Token2", "Token3", "Token4"};
         GameObject player = PhotonNetwork.Instantiate(tokenPrefabs[tokenNumber - 1], spawnpoints[tokenNumber - 1].GetComponent<Transform>().position, Quaternion.identity);
-        player.GetComponent<Token>().setTokenNumber(tokenNumber);
-        player.GetComponent<Token>().setRoutes(allRoutes);
+        Token playerToken = player.GetComponent<Token>();
+        playerToken.setTokenNumber(tokenNumber);
+        playerToken.setRoutes(allRoutes);
+        playerToken.nickName = PhotonNetwork.NickName;
         instance.listOfTokens.Add(player);
+        bonesCounter.setToken(tokenNumber, playerToken);
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if (dice1move && dice2move)
+        { 
+            GameObject thisPlayer = listOfTokens[currPlayer];
+            Debug.Log("GameScript calling Token.move");
+            thisPlayer.GetComponent<Token>().move(dice1result + dice2result);
+            Debug.Log("GameScript Roll Dice End");
+            dice1move = false;
+            dice2move = false;
+        }
     }
 
     void Awake()
@@ -46,10 +60,5 @@ public class GameScript : MonoBehaviour
         Debug.Log("GameScript Roll Dice Called");
         dt1.RollDice();
         dt2.RollDice();
-        
-        GameObject thisPlayer = listOfTokens[currPlayer];
-        Debug.Log("GameScript calling Token.move");
-        thisPlayer.GetComponent<Token>().move(dice1result + dice2result);
-        Debug.Log("GameScript Roll Dice End");
     }
 }

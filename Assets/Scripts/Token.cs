@@ -11,6 +11,8 @@ public class Token : MonoBehaviour
 
     public Route allRoutes;
     public List<Vector3> thisRoute;
+    public int bones;
+    public string nickName;
     int currPos = 0;
     int tokenNumber;
  
@@ -18,6 +20,7 @@ public class Token : MonoBehaviour
     {
         view = GetComponent<PhotonView>();
         transform.Rotate(0, 90, 0, Space.Self);
+        bones = 6500;
     }
 
     void Update()

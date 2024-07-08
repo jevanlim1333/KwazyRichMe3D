@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 public class DiceThrower : MonoBehaviour
 {
-    public dice diceToThrow;
+    public Dice diceToThrow;
     public int diceThrowerNumber;
     public float throwForce = 5f;   
     public float rollForce = 10f;
@@ -28,7 +28,7 @@ public class DiceThrower : MonoBehaviour
             Destroy(die);
         }
 
-        dice dice = Instantiate(diceToThrow, transform.position, transform.rotation);
+        Dice dice = Instantiate(diceToThrow, transform.position, transform.rotation);
         _spawnedDice.Add(dice.gameObject);
         dice.RollDice(throwForce, rollForce, diceThrowerNumber);
         await Task.Yield();

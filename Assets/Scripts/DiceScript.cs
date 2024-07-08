@@ -5,14 +5,15 @@ using UnityEngine.Events;
 using System.Threading.Tasks;
 
 [RequireComponent(typeof(Rigidbody))]
-public class dice : MonoBehaviour
+public class Dice : MonoBehaviour
 {
     public Transform[] diceFaces;
     public Rigidbody rb;
 
     public int _diceIndex = -1;
 
-    public bool _hasStoppedRolling;
+    private bool _hasStoppedRolling;
+    private bool _delayFinished;
 
     private void Awake()
     {
@@ -21,7 +22,22 @@ public class dice : MonoBehaviour
 
     private void Update()
     {
-
+        if (!_delayFinished) return;
+        
+        if (!_hasStoppedRolling && rb.velocity.sqrMagnitude == 0f)
+        {
+            _hasStoppedRolling = true;
+            if (_diceIndex == 1)
+            {
+                GameScript.instance.dice1result = GetNumberOnTopFace();
+                GameScript.instance.dice1move = true;
+            }
+            if (_diceIndex == 2)
+            {
+                GameScript.instance.dice2result = GetNumberOnTopFace();
+                GameScript.instance.dice2move = true;
+            }
+        }
     }
 
     [ContextMenu("Get Top Face")]
@@ -42,7 +58,11 @@ public class dice : MonoBehaviour
             }
         }
 
+        int result = topFace + 1;
+        Debug.Log("Dice " + _diceIndex + " rolled " + result);
+
         return topFace + 1;
+
     }
 
     public void RollDice(float throwForce, float rollForce, int i)
@@ -59,37 +79,13 @@ public class dice : MonoBehaviour
         rb.AddTorque(new Vector3(randX, randY, randZ) * (rollForce + randomVariance), ForceMode.Impulse);
 
         DelayResult();
-
-        while (!_hasStoppedRolling)
-        {
-            if (rb.velocity.sqrMagnitude == 0f) 
-            {
-                getResult();
-            }
-        }
-        
         Debug.Log("Dice Roll Dice End");
     }
 
     private async void DelayResult()
     {
         await Task.Delay(1000);
-    }
-
-    public void getResult()
-    {
-        if (_diceIndex == 1)
-        {
-            GameScript.instance.dice1result = GetNumberOnTopFace();
-            Debug.Log("Dice 1 result " + GameScript.instance.dice1result);
-        }
-            
-        if (_diceIndex == 2)
-        {
-            GameScript.instance.dice2result = GetNumberOnTopFace();
-            Debug.Log("Dice 2 result " + GameScript.instance.dice2result);
-        }
-        _hasStoppedRolling = true;
+        _delayFinished = true;
     }
 }
 
