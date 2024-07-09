@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class bedok : MonoBehaviour
 {
+    public Canvas canvas;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,10 +19,19 @@ public class bedok : MonoBehaviour
     }
     public void openBedok()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("bedok");
+        CanvasGroup canvasGroup = canvas.GetComponent<CanvasGroup>();
+
+        canvasGroup.alpha = 1;
+        canvasGroup.interactable = true;
+        canvasGroup.blocksRaycasts = true;
+
     }
     public void closeBedok()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Game");
+        CanvasGroup canvasGroup = canvas.GetComponent<CanvasGroup>();
+
+        canvasGroup.alpha = 0;
+        canvasGroup.interactable = false;
+        canvasGroup.blocksRaycasts = false;
     }
 }
