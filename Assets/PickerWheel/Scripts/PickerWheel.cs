@@ -71,7 +71,7 @@ namespace EasyUI.PickerWheelUI {
             Debug.LogError ("You can't set all pieces chance to zero") ;
 
 
-         SetupAudio () ;
+         //SetupAudio () ;
 
       }
 

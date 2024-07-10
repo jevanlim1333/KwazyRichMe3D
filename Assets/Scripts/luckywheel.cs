@@ -10,7 +10,8 @@ public class luckywheel : MonoBehaviour
     [SerializeField] private Text uiSpinButtonText;
 
     [SerializeField] private PickerWheel pickerWheel;
-
+    public Canvas wheelCanvas;
+    public Canvas backgroundCanvas;
     // Start is called before the first frame update 
     void Start()
     {
@@ -29,15 +30,24 @@ public class luckywheel : MonoBehaviour
             });
             pickerWheel.Spin();
         });
+
+        wheelCanvas.GetComponent<Canvas>().enabled = false;
+        backgroundCanvas.GetComponent<Canvas>().enabled = false;    
     }
 
     public void openTreats()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("lucky wheel");
+        //UnityEngine.SceneManagement.SceneManager.LoadScene("lucky wheel");
+        
+        wheelCanvas.GetComponent<Canvas>().enabled = true;
+        backgroundCanvas.GetComponent<Canvas>().enabled = true;
     }
     public void closeTreats()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Game");
+        //UnityEngine.SceneManagement.SceneManager.LoadScene("Game");
+
+        wheelCanvas.GetComponent<Canvas>().enabled = false;
+        backgroundCanvas.GetComponent<Canvas>().enabled = false;    
     }
 
 }
