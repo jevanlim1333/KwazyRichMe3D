@@ -105,6 +105,8 @@ GameObject:
   - component: {fileID: 9007126231907396044}
   - component: {fileID: -6499968845179319203}
   - component: {fileID: 9153152601817658345}
+  - component: {fileID: 1301373766693361553}
+  - component: {fileID: 2019814757856138283}
   m_Layer: 0
   m_Name: dice
   m_TagString: Untagged
@@ -197,6 +199,45 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 150, y: 150, z: 150}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1301373766693361553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3784744909892902521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents:
+  - {fileID: 2019814757856138283}
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &2019814757856138283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3784744909892902521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
 --- !u!1 &6016038616482922109
 GameObject:
   m_ObjectHideFlags: 0

@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using System.Threading.Tasks;
+using Photon.Pun;
+using Photon.Realtime;
+using System.IO;
 
 [RequireComponent(typeof(Rigidbody))]
 public class Dice : MonoBehaviour
@@ -14,6 +17,13 @@ public class Dice : MonoBehaviour
 
     private bool _hasStoppedRolling;
     private bool _delayFinished;
+
+    PhotonView view;
+
+    void Start() 
+    {
+        view = GetComponent<PhotonView>();
+    }
 
     private void Awake()
     {

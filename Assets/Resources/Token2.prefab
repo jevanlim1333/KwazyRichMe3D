@@ -88,6 +88,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allRoutes: {fileID: 0}
   thisRoute: []
+  bones: 0
+  nickName: 
 --- !u!1001 &5565863067752855387
 PrefabInstance:
   m_ObjectHideFlags: 0
