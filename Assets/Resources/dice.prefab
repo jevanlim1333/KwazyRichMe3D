@@ -176,7 +176,7 @@ MonoBehaviour:
   - {fileID: 1782058434611769032}
   - {fileID: 1375169824515508911}
   - {fileID: 6188993104640069713}
-  rb: {fileID: 0}
+  rb: {fileID: 9007126231907396044}
   _diceIndex: -1
 --- !u!65 &9153152601817658345
 BoxCollider:

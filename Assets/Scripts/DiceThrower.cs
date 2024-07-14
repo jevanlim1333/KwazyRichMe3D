@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Threading.Tasks;
-
+using Photon.Pun;
 
 public class DiceThrower : MonoBehaviour
 {
@@ -25,11 +25,14 @@ public class DiceThrower : MonoBehaviour
 
         foreach (var die in _spawnedDice)
         {
-            Destroy(die);
+            //Destroy(die);
+            PhotonNetwork.Destroy(die);
         }
 
-        Dice dice = Instantiate(diceToThrow, transform.position, transform.rotation);
-        _spawnedDice.Add(dice.gameObject);
+        //Dice dice = Instantiate(diceToThrow, transform.position, transform.rotation);
+        GameObject diceObject = PhotonNetwork.Instantiate("dice", transform.position, transform.rotation);
+        _spawnedDice.Add(diceObject);
+        Dice dice = diceObject.GetComponent<Dice>();
         dice.RollDice(throwForce, rollForce, diceThrowerNumber);
         await Task.Yield();
 
