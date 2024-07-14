@@ -33,6 +33,9 @@ public class GameScript : MonoBehaviour
         playerToken.setRoutes(allRoutes);
         playerToken.nickName = PhotonNetwork.NickName;
         instance.listOfTokens.Add(player);
+        
+        GameObject bonesCounter1 = PhotonNetwork.Instantiate("BonesCounter", new Vector3(-750, 286, 0), Quaternion.identity);
+        BonesCounter bonesCounter = bonesCounter1.GetComponent<BonesCounter>();
         bonesCounter.setToken(tokenNumber, playerToken);
     }
 

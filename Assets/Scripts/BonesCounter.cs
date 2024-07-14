@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Photon.Pun;
+using Photon.Realtime;
+using System.IO;
 
 public class BonesCounter : MonoBehaviour
 {
@@ -10,10 +13,13 @@ public class BonesCounter : MonoBehaviour
     public PlayerNickname player2;
     public PlayerNickname player3;
     public PlayerNickname player4;
+
+    PhotonView view;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        view = GetComponent<PhotonView>();
     }
 
     // Update is called once per frame
