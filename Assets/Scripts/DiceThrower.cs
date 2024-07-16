@@ -23,11 +23,11 @@ public class DiceThrower : MonoBehaviour
         Debug.Log("Dice Thrower Roll Dice Called");
         if (diceToThrow == null) return;
 
-        foreach (var die in _spawnedDice)
-        {
-            //Destroy(die);
-            PhotonNetwork.Destroy(die);
-        }
+        //foreach (var die in _spawnedDice)
+        //{
+        //    //Destroy(die);
+        //    PhotonNetwork.Destroy(die);
+        //}
 
         //Dice dice = Instantiate(diceToThrow, transform.position, transform.rotation);
         GameObject diceObject = PhotonNetwork.Instantiate("dice", transform.position, transform.rotation);
@@ -35,8 +35,18 @@ public class DiceThrower : MonoBehaviour
         Dice dice = diceObject.GetComponent<Dice>();
         dice.RollDice(throwForce, rollForce, diceThrowerNumber);
         await Task.Yield();
+        //StartCoroutine(destroy(diceObject));
 
         Debug.Log("Dice Thrower Roll Dice End");
+    }
+
+    public IEnumerator destroy()
+    {
+        yield return new WaitForSeconds(3f);
+        foreach (var die in _spawnedDice)
+        {
+            PhotonNetwork.Destroy(die);
+        }
     }
 
 }

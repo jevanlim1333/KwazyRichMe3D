@@ -50,6 +50,9 @@ public class GameScript : MonoBehaviour
             Debug.Log("GameScript Roll Dice End");
             dice1move = false;
             dice2move = false;
+            StartCoroutine(dt1.destroy());
+            StartCoroutine(dt2.destroy());
+
         }
     }
 
@@ -63,5 +66,6 @@ public class GameScript : MonoBehaviour
         Debug.Log("GameScript Roll Dice Called");
         dt1.RollDice();
         dt2.RollDice();
+        
     }
 }
