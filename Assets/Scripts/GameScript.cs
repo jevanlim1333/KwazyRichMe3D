@@ -5,7 +5,7 @@ using Photon.Pun;
 using Photon.Realtime;
 using System.Threading.Tasks;
 
-public class GameScript : MonoBehaviour
+public class GameScript : MonoBehaviourPunCallbacks
 {
     public static GameScript instance;
     public Route allRoutes;
@@ -19,11 +19,12 @@ public class GameScript : MonoBehaviour
     public bool dice1move;
     public bool dice2move;
     public int currPlayer = 0;
-    public BonesCounter bonesCounter;
     public Chat chat;
+    PhotonView view;
     // Start is called before the first frame update
     void Start()
     {
+        view = GetComponent<PhotonView>();
         instance = this;
         int tokenNumber = PhotonNetwork.LocalPlayer.ActorNumber;
         tokenPrefabs = new List<string>{"Token1", "Token2", "Token3", "Token4"};
@@ -33,10 +34,6 @@ public class GameScript : MonoBehaviour
         playerToken.setRoutes(allRoutes);
         playerToken.nickName = PhotonNetwork.NickName;
         instance.listOfTokens.Add(player);
-        
-        GameObject bonesCounter1 = PhotonNetwork.Instantiate("BonesCounter", new Vector3(-750, 286, 0), Quaternion.identity);
-        BonesCounter bonesCounter = bonesCounter1.GetComponent<BonesCounter>();
-        bonesCounter.setToken(tokenNumber, playerToken);
     }
 
     // Update is called once per frame
