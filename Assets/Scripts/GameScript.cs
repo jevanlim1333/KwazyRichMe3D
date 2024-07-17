@@ -20,7 +20,7 @@ public class GameScript : MonoBehaviour
     public bool dice2move;
     public int currPlayer = 0;
     public BonesCounter bonesCounter;
-    
+    public Chat chat;
     // Start is called before the first frame update
     void Start()
     {
@@ -46,13 +46,15 @@ public class GameScript : MonoBehaviour
         { 
             GameObject thisPlayer = listOfTokens[currPlayer];
             Debug.Log("GameScript calling Token.move");
-            thisPlayer.GetComponent<Token>().move(dice1result + dice2result);
+            int stepsToMove = dice1result + dice2result;
+            thisPlayer.GetComponent<Token>().move(stepsToMove);
             Debug.Log("GameScript Roll Dice End");
             dice1move = false;
             dice2move = false;
             StartCoroutine(dt1.destroy());
             StartCoroutine(dt2.destroy());
-
+            chat.GetComponent<PhotonView>().RPC("GetMessage", RpcTarget.All, ("[GAME] " + thisPlayer.GetComponent<Token>().nickName + " rolled " + stepsToMove ));
+            //chat.GetMessage("[GAME] " + thisPlayer.GetComponent<Token>().nickName + " rolled " + stepsToMove);
         }
     }
 
