@@ -5,7 +5,7 @@ using Photon.Pun;
 using Photon.Realtime;
 using System.Threading.Tasks;
 
-public class GameScript : MonoBehaviourPunCallbacks
+public class GameScript : MonoBehaviour
 {
     public static GameScript instance;
     public Route allRoutes;
@@ -20,12 +20,17 @@ public class GameScript : MonoBehaviourPunCallbacks
     public bool dice2move;
     public int currPlayer = 0;
     public Chat chat;
-    PhotonView view;
     // Start is called before the first frame update
     void Start()
     {
-        view = GetComponent<PhotonView>();
-        instance = this;
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else 
+        {
+            Destroy(gameObject);
+        }
         int tokenNumber = PhotonNetwork.LocalPlayer.ActorNumber;
         tokenPrefabs = new List<string>{"Token1", "Token2", "Token3", "Token4"};
         GameObject player = PhotonNetwork.Instantiate(tokenPrefabs[tokenNumber - 1], spawnpoints[tokenNumber - 1].GetComponent<Transform>().position, Quaternion.identity);
@@ -35,7 +40,6 @@ public class GameScript : MonoBehaviourPunCallbacks
         playerToken.nickName = PhotonNetwork.NickName;
         instance.listOfTokens.Add(player);
     }
-
     // Update is called once per frame
     void Update()
     {
