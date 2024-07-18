@@ -15,6 +15,8 @@ public class Token : MonoBehaviourPunCallbacks
     public string nickName;
     int currPos = 0;
     int tokenNumber;
+
+    private PlayerManager target;
  
     void Start()
     {
@@ -25,7 +27,12 @@ public class Token : MonoBehaviourPunCallbacks
 
     void Update()
     {
-
+        bones = target.bones;
+        if (target == null)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
     }
 
     public void setTokenNumber(int i)
@@ -81,6 +88,18 @@ public class Token : MonoBehaviourPunCallbacks
         if (currPos == 0 || currPos == 10 || currPos == 20 || currPos == 30)
         {
             transform.Rotate(0, 90, 0, Space.Self);
+        }
+    }
+
+    public void SetTarget(PlayerManager _target)
+    {
+        if (_target == null)
+        { return; }
+    // Cache references for efficiency
+        target = _target;
+        if (nickName != null)
+        {
+            nickName = target.photonView.Owner.NickName;
         }
     }
 

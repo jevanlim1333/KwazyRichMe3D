@@ -33,13 +33,16 @@ public class GameScript : MonoBehaviour
         }
         int tokenNumber = PhotonNetwork.LocalPlayer.ActorNumber;
         tokenPrefabs = new List<string>{"Token1", "Token2", "Token3", "Token4"};
-        GameObject player = PhotonNetwork.Instantiate(tokenPrefabs[tokenNumber - 1], spawnpoints[tokenNumber - 1].GetComponent<Transform>().position, Quaternion.identity);
-        Token playerToken = player.GetComponent<Token>();
-        playerToken.setTokenNumber(tokenNumber);
-        playerToken.setRoutes(allRoutes);
-        playerToken.nickName = PhotonNetwork.NickName;
-        List<GameObject> listOfTokens = new List<GameObject>(); // moved here
-        instance.listOfTokens.Add(player);//used to be instance.
+        if (PlayerManager.LocalPlayerInstance == null) //if condition added
+        {
+            GameObject player = PhotonNetwork.Instantiate(tokenPrefabs[tokenNumber - 1], spawnpoints[tokenNumber - 1].GetComponent<Transform>().position, Quaternion.identity);
+            Token playerToken = player.GetComponent<Token>();
+            playerToken.setTokenNumber(tokenNumber);
+            playerToken.setRoutes(allRoutes);
+            playerToken.nickName = PhotonNetwork.NickName;
+            List<GameObject> listOfTokens = new List<GameObject>(); // moved here
+            instance.listOfTokens.Add(player);
+        }
     }
     // Update is called once per frame
     void Update()
@@ -72,4 +75,9 @@ public class GameScript : MonoBehaviour
         dt2.RollDice();
         
     }
+    //added
+    public void LeaveRoom()
+        {
+            PhotonNetwork.LeaveRoom();
+        }
 }

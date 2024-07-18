@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1866031044865029621}
   - component: {fileID: 9043630548609372513}
   - component: {fileID: 5386027371830237075}
+  - component: {fileID: 4739154494754831815}
   m_Layer: 0
   m_Name: Token4
   m_TagString: Untagged
@@ -88,6 +89,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allRoutes: {fileID: 0}
   thisRoute: []
+  bones: 0
+  nickName: 
+--- !u!114 &4739154494754831815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5708067584585265835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0356824b3fe3741c3a52d7648f374605, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bones: 6500
+  PlayerUiPrefab: {fileID: 755043275439769480}
 --- !u!1001 &485010015840615129
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -159,6 +176,12 @@ PrefabInstance:
 --- !u!4 &86029600803708210 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f0b27aeed8feb44439ccb71d253ee09a,
+    type: 3}
+  m_PrefabInstance: {fileID: 485010015840615129}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &755043275439769480 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f0b27aeed8feb44439ccb71d253ee09a,
     type: 3}
   m_PrefabInstance: {fileID: 485010015840615129}
   m_PrefabAsset: {fileID: 0}
