@@ -13,6 +13,7 @@ public class ScoreboardItem : MonoBehaviour
     {
         usernameText.text = player.NickName;
         token = GameScript.instance.listOfTokens[player.ActorNumber - 1].GetComponent<Token>();
+    
     }
 
     void Update()

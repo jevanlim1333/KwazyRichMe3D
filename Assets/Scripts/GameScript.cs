@@ -11,7 +11,7 @@ public class GameScript : MonoBehaviour
     public Route allRoutes;
     public List<Spawnpoints> spawnpoints;
     public List<string> tokenPrefabs;
-    public List<GameObject> listOfTokens = new List<GameObject>();
+    public List<GameObject> listOfTokens;
     public DiceThrower dt1;
     public DiceThrower dt2;
     public int dice1result;
@@ -38,7 +38,8 @@ public class GameScript : MonoBehaviour
         playerToken.setTokenNumber(tokenNumber);
         playerToken.setRoutes(allRoutes);
         playerToken.nickName = PhotonNetwork.NickName;
-        instance.listOfTokens.Add(player);
+        List<GameObject> listOfTokens = new List<GameObject>(); // moved here
+        instance.listOfTokens.Add(player);//used to be instance.
     }
     // Update is called once per frame
     void Update()
