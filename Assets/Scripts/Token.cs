@@ -9,24 +9,17 @@ using Hashtable = ExitGames.Client.Photon.Hashtable;
 public class Token : MonoBehaviourPunCallbacks
 {
     PhotonView view;
-
     public Route allRoutes;
     public List<Vector3> thisRoute;
     public int bones;
     public string nickName;
     public int currPos = 0;
-    int tokenNumber;
-
-    public int boneScore;
+    public int tokenNumber;
  
     void Start()
     {
         view = GetComponent<PhotonView>();
         bones = 6500;
-        boneScore = 6500;
-        Hashtable hash = new Hashtable();
-        hash.Add("Bones", boneScore);
-        PhotonNetwork.LocalPlayer.SetCustomProperties(hash);
     }
 
     void Update()

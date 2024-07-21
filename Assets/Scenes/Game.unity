@@ -35003,6 +35003,7 @@ MonoBehaviour:
   chat: {fileID: 857019714}
   playerGameObject: {fileID: 0}
   rollDiceButton: {fileID: 2025226479}
+  rolling: 0
 --- !u!4 &1533220464
 Transform:
   m_ObjectHideFlags: 0
@@ -39026,6 +39027,7 @@ GameObject:
   - component: {fileID: 1710205471}
   - component: {fileID: 1710205473}
   - component: {fileID: 1710205472}
+  - component: {fileID: 1710205474}
   m_Layer: 5
   m_Name: Scoreboard
   m_TagString: Untagged
@@ -39093,6 +39095,28 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &1710205474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1710205470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 3
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &1718960703
 GameObject:
   m_ObjectHideFlags: 0

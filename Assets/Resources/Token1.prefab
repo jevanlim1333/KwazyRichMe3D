@@ -91,7 +91,7 @@ MonoBehaviour:
   bones: 0
   nickName: 
   currPos: 0
-  boneScore: 0
+  tokenNumber: 0
 --- !u!1001 &4444425188241594022
 PrefabInstance:
   m_ObjectHideFlags: 0

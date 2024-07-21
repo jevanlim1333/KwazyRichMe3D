@@ -4,7 +4,6 @@ using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
 using System.Threading.Tasks;
-using Hashtable = ExitGames.Client.Photon.Hashtable;
 using UnityEngine.UI;
 
 public class GameScript : MonoBehaviourPunCallbacks
@@ -22,6 +21,7 @@ public class GameScript : MonoBehaviourPunCallbacks
     public int currPlayer = 1;
     public Chat chat;
     public GameObject playerGameObject;
+    public Token playerToken;
     public Button rollDiceButton;
     public bool rolling = false;
 
@@ -39,7 +39,7 @@ public class GameScript : MonoBehaviourPunCallbacks
 
         int tokenNumber = PhotonNetwork.LocalPlayer.ActorNumber;
         playerGameObject = PhotonNetwork.Instantiate(tokenPrefabs[tokenNumber - 1], spawnpoints[tokenNumber - 1].GetComponent<Transform>().position, Quaternion.identity);
-        Token playerToken = playerGameObject.GetComponent<Token>();
+        playerToken = playerGameObject.GetComponent<Token>();
         playerToken.setUpToken(tokenNumber, allRoutes);
     }
     // Update is called once per frame

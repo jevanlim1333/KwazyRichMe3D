@@ -12,10 +12,11 @@ public class ScoreboardItem : MonoBehaviour
     public void Initialize(Player player)
     {
         usernameText.text = player.NickName;
+        token = GameScript.instance.playerGameObject.GetComponent<Token>();
     }
 
     void Update()
     {
-
+        
     }
 }

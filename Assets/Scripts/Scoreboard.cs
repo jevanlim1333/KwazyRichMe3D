@@ -17,6 +17,11 @@ public class Scoreboard : MonoBehaviourPunCallbacks
         }
     }
 
+    void Update()
+    {
+        GetComponent<PhotonView>().RPC("ChangeScoreboardValue", RpcTarget.All, PhotonNetwork.LocalPlayer, GameScript.instance.playerToken.bones);
+    }
+
     public override void OnPlayerEnteredRoom(Player newPlayer)
     {
         AddScoreboardItem(newPlayer);
@@ -38,5 +43,11 @@ public class Scoreboard : MonoBehaviourPunCallbacks
     {
         Destroy(scoreboardItems[player].gameObject);
         scoreboardItems.Remove(player);
+    }
+
+    [PunRPC]
+    public void ChangeScoreboardValue(Player player, int bones)
+    {
+        scoreboardItems[player].bonesText.text = "" + bones;
     }
 }
