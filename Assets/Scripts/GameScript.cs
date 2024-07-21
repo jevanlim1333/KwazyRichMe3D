@@ -11,7 +11,7 @@ public class GameScript : MonoBehaviourPunCallbacks
     public static GameScript instance;
     public Route allRoutes;
     public List<Spawnpoints> spawnpoints;
-    public List<string> tokenPrefabs;
+    public List<string> tokenPrefabs = new List<string>{"Token1", "Token2", "Token3", "Token4"};
     public List<GameObject> listOfTokens;
     public DiceThrower dt1;
     public DiceThrower dt2;
@@ -36,36 +36,21 @@ public class GameScript : MonoBehaviourPunCallbacks
 
         if (PhotonNetwork.IsMasterClient) //condition added
         {
-            tokenPrefabs = new List<string>{"Token1", "Token2", "Token3", "Token4"};
             List<GameObject> listOfTokens = new List<GameObject>(); 
-
-            Hashtable hash = new Hashtable();
-            hash.Add("Tokens", listOfTokens);
-            PhotonNetwork.CurrentRoom.SetCustomProperties(hash);
-            
         }
 
-        //if (photonView.IsMine) // condition added
-        {
-            int tokenNumber = PhotonNetwork.LocalPlayer.ActorNumber;
-            //tokenPrefabs = new List<string>{"Token1", "Token2", "Token3", "Token4"};
-            GameObject player = PhotonNetwork.Instantiate(tokenPrefabs[tokenNumber - 1], spawnpoints[tokenNumber - 1].GetComponent<Transform>().position, Quaternion.identity);
-            Token playerToken = player.GetComponent<Token>();
-            playerToken.setTokenNumber(tokenNumber);
-            playerToken.setRoutes(allRoutes);
-            playerToken.nickName = PhotonNetwork.NickName;
-            //List<GameObject> listOfTokens = new List<GameObject>(); moved above
-            listOfTokens = (List<GameObject>)PhotonNetwork.CurrentRoom.CustomProperties["Tokens"];
-            listOfTokens.Add(player);
-            Hashtable hash = new Hashtable();
-            hash.Add("Tokens", listOfTokens);
-            PhotonNetwork.CurrentRoom.SetCustomProperties(hash);
-        }
-        
+        int tokenNumber = PhotonNetwork.LocalPlayer.ActorNumber;
+        GameObject player = PhotonNetwork.Instantiate(tokenPrefabs[tokenNumber - 1], spawnpoints[tokenNumber - 1].GetComponent<Transform>().position, Quaternion.identity);
+        Token playerToken = player.GetComponent<Token>();
+        playerToken.setUpToken(tokenNumber, allRoutes);
+        listOfTokens.Add(player);
+
+        Debug.Log(PhotonNetwork.CurrentRoom.CustomProperties);
     }
     // Update is called once per frame
     void Update()
     {
+
         if (dice1move && dice2move)
         { 
             GameObject thisPlayer = listOfTokens[currPlayer];
@@ -80,8 +65,6 @@ public class GameScript : MonoBehaviourPunCallbacks
             chat.GetComponent<PhotonView>().RPC("GetMessage", RpcTarget.All, ("[GAME] " + thisPlayer.GetComponent<Token>().nickName + " rolled " + stepsToMove ));
             //chat.GetMessage("[GAME] " + thisPlayer.GetComponent<Token>().nickName + " rolled " + stepsToMove);
         }
-
-        listOfTokens = (List<GameObject>)PhotonNetwork.CurrentRoom.CustomProperties["Tokens"];
     }
 
     void Awake()

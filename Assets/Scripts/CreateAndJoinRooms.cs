@@ -32,13 +32,13 @@ public class CreateAndJoinRooms : MonoBehaviourPunCallbacks
 
     public void JoinRoom()
     {
+        PhotonNetwork.NickName = playerNickname.text;
         PhotonNetwork.JoinRoom(joinInput.text);
         Debug.Log("Joining room, Load game scene");
     }
 
     public override void OnJoinedRoom()
     {
-        PhotonNetwork.NickName = playerNickname.text;
         PhotonNetwork.LoadLevel("Game");
         Debug.Log("Game Scene Loaded");
     }

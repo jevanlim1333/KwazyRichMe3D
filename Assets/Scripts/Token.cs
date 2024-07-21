@@ -17,41 +17,30 @@ public class Token : MonoBehaviourPunCallbacks
     int currPos = 0;
     int tokenNumber;
 
-    int boneScore;
+    public int boneScore;
  
     void Start()
     {
-        //if (PhotonView.IsMine)
-        {
-            view = GetComponent<PhotonView>();
-            transform.Rotate(0, 90, 0, Space.Self);
-            bones = 6500;
-            boneScore = 6500;
-            Hashtable hash = new Hashtable();
-            hash.Add("Bones", boneScore);
-            PhotonNetwork.LocalPlayer.SetCustomProperties(hash);
-        }
+        view = GetComponent<PhotonView>();
+        transform.Rotate(0, 90, 0, Space.Self);
+        bones = 6500;
+        boneScore = 6500;
+        Hashtable hash = new Hashtable();
+        hash.Add("Bones", boneScore);
+        PhotonNetwork.LocalPlayer.SetCustomProperties(hash);
     }
 
     void Update()
     {
-        boneScore = (int)PhotonNetwork.LocalPlayer.CustomProperties["Bones"];
-    
+        //boneScore = (int)PhotonNetwork.LocalPlayer.CustomProperties["Bones"];
     }
 
-    public void setTokenNumber(int i)
+    public void setUpToken(int tokenNumber1, Route route)
     {
-        //if (PhotonView.IsMine) 
-        {
-            tokenNumber = i;
-        }
-        
-    }
-
-    public void setRoutes(Route r)
-    {
-        allRoutes = r;
-        thisRoute = r.getRoute(tokenNumber);
+        tokenNumber = tokenNumber1;
+        allRoutes = route;
+        thisRoute = route.getRoute(tokenNumber);
+        nickName = PhotonNetwork.NickName;
     }
 
     public void move(int steps)
