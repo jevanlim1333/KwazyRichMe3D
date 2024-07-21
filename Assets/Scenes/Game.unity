@@ -34993,16 +34993,16 @@ MonoBehaviour:
   - Token2
   - Token3
   - Token4
-  listOfTokens: []
   dt1: {fileID: 1806677795}
   dt2: {fileID: 434462571}
   dice1result: 0
   dice2result: 0
   dice1move: 0
   dice2move: 0
-  currPlayer: 0
+  currPlayer: 1
   chat: {fileID: 857019714}
-  token: {fileID: 0}
+  playerGameObject: {fileID: 0}
+  rollDiceButton: {fileID: 2025226479}
 --- !u!4 &1533220464
 Transform:
   m_ObjectHideFlags: 0

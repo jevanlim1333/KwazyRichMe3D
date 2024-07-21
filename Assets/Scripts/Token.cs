@@ -14,7 +14,7 @@ public class Token : MonoBehaviourPunCallbacks
     public List<Vector3> thisRoute;
     public int bones;
     public string nickName;
-    int currPos = 0;
+    public int currPos = 0;
     int tokenNumber;
 
     public int boneScore;
@@ -22,7 +22,6 @@ public class Token : MonoBehaviourPunCallbacks
     void Start()
     {
         view = GetComponent<PhotonView>();
-        transform.Rotate(0, 90, 0, Space.Self);
         bones = 6500;
         boneScore = 6500;
         Hashtable hash = new Hashtable();
@@ -74,18 +73,9 @@ public class Token : MonoBehaviourPunCallbacks
                 currPos++;
             }
 
-            checkRotation();
             isMoving = false;
         }
         Debug.Log("moved");
-    }
-
-    public void checkRotation()
-    {
-        if (currPos == 0 || currPos == 10 || currPos == 20 || currPos == 30)
-        {
-            transform.Rotate(0, 90, 0, Space.Self);
-        }
     }
 
 }

@@ -47,6 +47,8 @@ public class DiceThrower : MonoBehaviour
         {
             PhotonNetwork.Destroy(die);
         }
+        GameScript.instance.GetComponent<PhotonView>().RPC("SetRolling", RpcTarget.All, false);
+
     }
 
 }
