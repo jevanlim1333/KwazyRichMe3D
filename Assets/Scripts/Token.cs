@@ -4,6 +4,7 @@ using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
 using System.IO;
+using Hashtable = ExitGames.Client.Photon.Hashtable;
 
 public class Token : MonoBehaviourPunCallbacks
 {
@@ -16,28 +17,35 @@ public class Token : MonoBehaviourPunCallbacks
     int currPos = 0;
     int tokenNumber;
 
-    private PlayerManager target;
+    int boneScore;
  
     void Start()
     {
-        view = GetComponent<PhotonView>();
-        transform.Rotate(0, 90, 0, Space.Self);
-        bones = 6500;
+        //if (PhotonView.IsMine)
+        {
+            view = GetComponent<PhotonView>();
+            transform.Rotate(0, 90, 0, Space.Self);
+            bones = 6500;
+            boneScore = 6500;
+            Hashtable hash = new Hashtable();
+            hash.Add("Bones", boneScore);
+            PhotonNetwork.LocalPlayer.SetCustomProperties(hash);
+        }
     }
 
     void Update()
     {
-        bones = target.bones;
-        if (target == null)
-        {
-            Destroy(this.gameObject);
-            return;
-        }
+        boneScore = (int)PhotonNetwork.LocalPlayer.CustomProperties["Bones"];
+    
     }
 
     public void setTokenNumber(int i)
     {
-        tokenNumber = i;
+        //if (PhotonView.IsMine) 
+        {
+            tokenNumber = i;
+        }
+        
     }
 
     public void setRoutes(Route r)
@@ -88,18 +96,6 @@ public class Token : MonoBehaviourPunCallbacks
         if (currPos == 0 || currPos == 10 || currPos == 20 || currPos == 30)
         {
             transform.Rotate(0, 90, 0, Space.Self);
-        }
-    }
-
-    public void SetTarget(PlayerManager _target)
-    {
-        if (_target == null)
-        { return; }
-    // Cache references for efficiency
-        target = _target;
-        if (nickName != null)
-        {
-            nickName = target.photonView.Owner.NickName;
         }
     }
 

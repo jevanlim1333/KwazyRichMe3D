@@ -27,6 +27,7 @@ public class CreateAndJoinRooms : MonoBehaviourPunCallbacks
         PhotonNetwork.CreateRoom(createInput.text, roomOptions);
         // PhotonNetwork.CreateRoom(createInput.text);
         Debug.Log("Creating room, Load game scene");
+        
     }
 
     public void JoinRoom()

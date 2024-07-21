@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: -6439986558734218939}
   - component: {fileID: -1797965737964592193}
   - component: {fileID: 6942091565600707507}
-  - component: {fileID: 1827281097506004897}
   m_Layer: 0
   m_Name: Token3
   m_TagString: Untagged
@@ -91,20 +90,6 @@ MonoBehaviour:
   thisRoute: []
   bones: 0
   nickName: 
---- !u!114 &1827281097506004897
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 235533308178263011}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0356824b3fe3741c3a52d7648f374605, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bones: 6500
-  PlayerUiPrefab: {fileID: 0}
 --- !u!1001 &3818216510419319392
 PrefabInstance:
   m_ObjectHideFlags: 0

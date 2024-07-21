@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: -8826384119656294970}
   - component: {fileID: -5281441999240835256}
   - component: {fileID: -8856148727684466779}
-  - component: {fileID: 8800653931434723383}
   m_Layer: 0
   m_Name: Token2
   m_TagString: Untagged
@@ -91,20 +90,6 @@ MonoBehaviour:
   thisRoute: []
   bones: 0
   nickName: 
---- !u!114 &8800653931434723383
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6203834062771753644}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0356824b3fe3741c3a52d7648f374605, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bones: 6500
-  PlayerUiPrefab: {fileID: 4754819520488720906}
 --- !u!1001 &5565863067752855387
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -173,12 +158,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f11e952835e1f49dca729e4b6b6b36f9, type: 3}
---- !u!1 &4754819520488720906 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f11e952835e1f49dca729e4b6b6b36f9,
-    type: 3}
-  m_PrefabInstance: {fileID: 5565863067752855387}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5383863714323796144 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f11e952835e1f49dca729e4b6b6b36f9,
