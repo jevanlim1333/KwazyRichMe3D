@@ -17,6 +17,11 @@ public class Chat : MonoBehaviour
         inputField.text = "";
     }
 
+    public void SendGameMessage(string message)
+    {
+        GetComponent<PhotonView>().RPC("GetMessage", RpcTarget.All, message);
+    }
+
     [PunRPC]
     public void GetMessage(string ReceiveMessage)
     {

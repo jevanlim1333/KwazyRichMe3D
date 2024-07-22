@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
+using Photon.Realtime;
 
-public class Tile : MonoBehaviour
+public abstract class Tile : MonoBehaviour
 {
     public int tileNumber;
+
     float height = 10;
     public Vector3 p1;
     public Vector3 p2;
@@ -72,5 +75,7 @@ public class Tile : MonoBehaviour
             z4 = transform.position.z - 50;
         }
     }
+
+    public abstract void TileAction();
 
 }

@@ -65,8 +65,7 @@ public class GameScript : MonoBehaviourPunCallbacks
             dice2move = false;
             StartCoroutine(dt1.destroy());
             StartCoroutine(dt2.destroy());
-            chat.GetComponent<PhotonView>().RPC("GetMessage", RpcTarget.All, ("[GAME] " + playerGameObject.GetComponent<Token>().nickName + " rolled " + stepsToMove ));
-            GetComponent<PhotonView>().RPC("SetNextPlayer", RpcTarget.All);
+            chat.SendGameMessage("[GAME] " + playerGameObject.GetComponent<Token>().nickName + " rolled " + stepsToMove );
         }
     }
 

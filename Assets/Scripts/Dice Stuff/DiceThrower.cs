@@ -42,13 +42,11 @@ public class DiceThrower : MonoBehaviour
 
     public IEnumerator destroy()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1.5f);
         foreach (var die in _spawnedDice)
         {
             PhotonNetwork.Destroy(die);
         }
-        GameScript.instance.GetComponent<PhotonView>().RPC("SetRolling", RpcTarget.All, false);
-
     }
 
 }

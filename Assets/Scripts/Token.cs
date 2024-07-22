@@ -24,7 +24,7 @@ public class Token : MonoBehaviourPunCallbacks
 
     void Update()
     {
-        //boneScore = (int)PhotonNetwork.LocalPlayer.CustomProperties["Bones"];
+
     }
 
     public void setUpToken(int tokenNumber1, Route route)
@@ -69,6 +69,7 @@ public class Token : MonoBehaviourPunCallbacks
             isMoving = false;
         }
         Debug.Log("moved");
+        GameScript.instance.allRoutes.tilesArray[currPos].TileAction();
     }
 
 }
