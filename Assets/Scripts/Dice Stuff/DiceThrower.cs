@@ -43,9 +43,12 @@ public class DiceThrower : MonoBehaviour
     public IEnumerator destroy()
     {
         yield return new WaitForSeconds(1.5f);
-        foreach (var die in _spawnedDice)
+        if (_spawnedDice.Count != 0)
         {
-            PhotonNetwork.Destroy(die);
+            foreach (var die in _spawnedDice)
+            {
+                PhotonNetwork.Destroy(die);
+            }
         }
     }
 

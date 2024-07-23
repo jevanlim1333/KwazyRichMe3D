@@ -45,4 +45,10 @@ public class TileManager : MonoBehaviourPunCallbacks
         GameScript.instance.GetComponent<PhotonView>().RPC("SetNextPlayer", RpcTarget.All);
         GameScript.instance.GetComponent<PhotonView>().RPC("SetRolling", RpcTarget.All, false);
     }
+
+    [PunRPC]
+    public void GetPropertyRentPayment(int rent)
+    {
+        GameScript.instance.playerToken.bones += rent;
+    }
 }

@@ -59,13 +59,13 @@ public class GameScript : MonoBehaviourPunCallbacks
         {
             Debug.Log("GameScript calling Token.move");
             int stepsToMove = dice1result + dice2result;
-            playerGameObject.GetComponent<Token>().move(stepsToMove);
-            Debug.Log("GameScript Roll Dice End");
+            chat.SendGameMessage("[GAME] " + playerGameObject.GetComponent<Token>().nickName + " rolled " + stepsToMove);
             dice1move = false;
             dice2move = false;
             StartCoroutine(dt1.destroy());
             StartCoroutine(dt2.destroy());
-            chat.SendGameMessage("[GAME] " + playerGameObject.GetComponent<Token>().nickName + " rolled " + stepsToMove );
+            playerGameObject.GetComponent<Token>().move(stepsToMove);
+            Debug.Log("GameScript Roll Dice End");
         }
     }
 

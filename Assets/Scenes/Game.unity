@@ -5387,10 +5387,14 @@ MonoBehaviour:
   x4: 0
   z4: 0
   PropertyName: Bartley
-  basicRent: 0
-  setRent: 0
+  cost: 1000
+  basicRent: 60
+  setRent: 120
   rent: 0
   propertyCanvas: {fileID: 945783401}
+  otherProperties:
+  - {fileID: 1851103623}
+  - {fileID: 1787485539}
 --- !u!1 &212832644
 GameObject:
   m_ObjectHideFlags: 0
@@ -6625,10 +6629,14 @@ MonoBehaviour:
   x4: 0
   z4: 0
   PropertyName: Bedok
-  basicRent: 0
-  setRent: 0
+  cost: 3000
+  basicRent: 260
+  setRent: 520
   rent: 0
   propertyCanvas: {fileID: 1089023604}
+  otherProperties:
+  - {fileID: 1295188042}
+  - {fileID: 582003296}
 --- !u!1 &241057744
 GameObject:
   m_ObjectHideFlags: 0
@@ -7016,10 +7024,13 @@ MonoBehaviour:
   x4: 0
   z4: 0
   PropertyName: Fernvale
-  basicRent: 0
-  setRent: 0
+  cost: 600
+  basicRent: 20
+  setRent: 40
   rent: 0
   propertyCanvas: {fileID: 1210897594}
+  otherProperties:
+  - {fileID: 1056079060}
 --- !u!1 &246854335
 GameObject:
   m_ObjectHideFlags: 0
@@ -7673,10 +7684,14 @@ MonoBehaviour:
   x4: 0
   z4: 0
   PropertyName: Yishun
-  basicRent: 0
-  setRent: 0
+  cost: 1600
+  basicRent: 120
+  setRent: 240
   rent: 0
   propertyCanvas: {fileID: 1854301015}
+  otherProperties:
+  - {fileID: 803966337}
+  - {fileID: 267523942}
 --- !u!1 &267523937
 GameObject:
   m_ObjectHideFlags: 0
@@ -7810,10 +7825,14 @@ MonoBehaviour:
   x4: 0
   z4: 0
   PropertyName: Somerset
-  basicRent: 0
-  setRent: 0
+  cost: 1400
+  basicRent: 100
+  setRent: 200
   rent: 0
   propertyCanvas: {fileID: 705177748}
+  otherProperties:
+  - {fileID: 803966337}
+  - {fileID: 267034863}
 --- !u!1 &268714470
 GameObject:
   m_ObjectHideFlags: 0
@@ -7947,10 +7966,14 @@ MonoBehaviour:
   x4: 0
   z4: 0
   PropertyName: Hillview
-  basicRent: 0
-  setRent: 0
+  cost: 1800
+  basicRent: 140
+  setRent: 280
   rent: 0
   propertyCanvas: {fileID: 606148472}
+  otherProperties:
+  - {fileID: 2012151501}
+  - {fileID: 1268464617}
 --- !u!1 &269315046
 GameObject:
   m_ObjectHideFlags: 0
@@ -14977,10 +15000,14 @@ MonoBehaviour:
   x4: 0
   z4: 0
   PropertyName: Punggol
-  basicRent: 0
-  setRent: 0
+  cost: 2200
+  basicRent: 180
+  setRent: 260
   rent: 0
   propertyCanvas: {fileID: 1597266734}
+  otherProperties:
+  - {fileID: 2081942622}
+  - {fileID: 1850621746}
 --- !u!1 &479570812
 GameObject:
   m_ObjectHideFlags: 0
@@ -18733,10 +18760,14 @@ MonoBehaviour:
   x4: 0
   z4: 0
   PropertyName: Dover
-  basicRent: 0
-  setRent: 0
+  cost: 3200
+  basicRent: 280
+  setRent: 560
   rent: 0
   propertyCanvas: {fileID: 71752422}
+  otherProperties:
+  - {fileID: 1295188042}
+  - {fileID: 238452646}
 --- !u!1 &583988481
 GameObject:
   m_ObjectHideFlags: 0
@@ -19874,10 +19905,13 @@ MonoBehaviour:
   x4: 0
   z4: 0
   PropertyName: Defu
-  basicRent: 0
-  setRent: 0
+  cost: 3500
+  basicRent: 350
+  setRent: 700
   rent: 0
   propertyCanvas: {fileID: 52766252}
+  otherProperties:
+  - {fileID: 1415174714}
 --- !u!1 &639738435
 GameObject:
   m_ObjectHideFlags: 0
@@ -24736,10 +24770,14 @@ MonoBehaviour:
   x4: 0
   z4: 0
   PropertyName: Novena
-  basicRent: 0
-  setRent: 0
+  cost: 1400
+  basicRent: 100
+  setRent: 200
   rent: 0
   propertyCanvas: {fileID: 296457902}
+  otherProperties:
+  - {fileID: 267523942}
+  - {fileID: 267034863}
 --- !u!1 &808802733
 GameObject:
   m_ObjectHideFlags: 0
@@ -30145,10 +30183,14 @@ MonoBehaviour:
   x4: 0
   z4: 0
   PropertyName: Mayflower
-  basicRent: 0
-  setRent: 0
+  cost: 2600
+  basicRent: 220
+  setRent: 440
   rent: 0
   propertyCanvas: {fileID: 1118524217}
+  otherProperties:
+  - {fileID: 1423406972}
+  - {fileID: 1043772559}
 --- !u!1 &954068126
 GameObject:
   m_ObjectHideFlags: 0
@@ -31911,10 +31953,14 @@ MonoBehaviour:
   x4: 0
   z4: 0
   PropertyName: Maxwell
-  basicRent: 0
-  setRent: 0
+  cost: 2800
+  basicRent: 240
+  setRent: 480
   rent: 0
   propertyCanvas: {fileID: 693825758}
+  otherProperties:
+  - {fileID: 952882852}
+  - {fileID: 1423406972}
 --- !u!1 &1048982405
 GameObject:
   m_ObjectHideFlags: 0
@@ -32272,10 +32318,13 @@ MonoBehaviour:
   x4: 0
   z4: 0
   PropertyName: Meridian
-  basicRent: 0
-  setRent: 0
+  cost: 600
+  basicRent: 40
+  setRent: 80
   rent: 0
   propertyCanvas: {fileID: 1654503687}
+  otherProperties:
+  - {fileID: 243944941}
 --- !u!1 &1058825520
 GameObject:
   m_ObjectHideFlags: 0
@@ -36956,10 +37005,14 @@ MonoBehaviour:
   x4: 0
   z4: 0
   PropertyName: Bugis
-  basicRent: 0
-  setRent: 0
+  cost: 2000
+  basicRent: 160
+  setRent: 320
   rent: 0
   propertyCanvas: {fileID: 1392058788}
+  otherProperties:
+  - {fileID: 268714475}
+  - {fileID: 2012151501}
 --- !u!1 &1270649975
 GameObject:
   m_ObjectHideFlags: 0
@@ -38070,10 +38123,14 @@ MonoBehaviour:
   x4: 0
   z4: 0
   PropertyName: Eunos
-  basicRent: 0
-  setRent: 0
+  cost: 3000
+  basicRent: 260
+  setRent: 520
   rent: 0
   propertyCanvas: {fileID: 269676165}
+  otherProperties:
+  - {fileID: 582003296}
+  - {fileID: 238452646}
 --- !u!1 &1295404140
 GameObject:
   m_ObjectHideFlags: 0
@@ -39656,10 +39713,13 @@ MonoBehaviour:
   x4: 0
   z4: 0
   PropertyName: Loyang
-  basicRent: 0
-  setRent: 0
+  cost: 4000
+  basicRent: 500
+  setRent: 1000
   rent: 0
   propertyCanvas: {fileID: 380617143}
+  otherProperties:
+  - {fileID: 637236877}
 --- !u!1 &1423406967
 GameObject:
   m_ObjectHideFlags: 0
@@ -39793,10 +39853,14 @@ MonoBehaviour:
   x4: 0
   z4: 0
   PropertyName: Havelock
-  basicRent: 0
-  setRent: 0
+  cost: 2600
+  basicRent: 220
+  setRent: 440
   rent: 0
   propertyCanvas: {fileID: 1277231848}
+  otherProperties:
+  - {fileID: 952882852}
+  - {fileID: 1043772559}
 --- !u!1 &1435095278
 GameObject:
   m_ObjectHideFlags: 0
@@ -49432,10 +49496,14 @@ MonoBehaviour:
   x4: 0
   z4: 0
   PropertyName: Marymount
-  basicRent: 0
-  setRent: 0
+  cost: 1200
+  basicRent: 80
+  setRent: 160
   rent: 0
   propertyCanvas: {fileID: 233331441}
+  otherProperties:
+  - {fileID: 1851103623}
+  - {fileID: 206030656}
 --- !u!1 &1801958310
 GameObject:
   m_ObjectHideFlags: 0
@@ -51280,10 +51348,14 @@ MonoBehaviour:
   x4: 0
   z4: 0
   PropertyName: Sengkang
-  basicRent: 0
-  setRent: 0
+  cost: 2400
+  basicRent: 200
+  setRent: 400
   rent: 0
   propertyCanvas: {fileID: 1640768038}
+  otherProperties:
+  - {fileID: 2081942622}
+  - {fileID: 463096173}
 --- !u!1 &1851103618
 GameObject:
   m_ObjectHideFlags: 0
@@ -51417,10 +51489,14 @@ MonoBehaviour:
   x4: 0
   z4: 0
   PropertyName: Dakota
-  basicRent: 0
-  setRent: 0
+  cost: 1000
+  basicRent: 60
+  setRent: 120
   rent: 0
   propertyCanvas: {fileID: 497773162}
+  otherProperties:
+  - {fileID: 206030656}
+  - {fileID: 1787485539}
 --- !u!1 &1852649974
 GameObject:
   m_ObjectHideFlags: 0
@@ -55406,10 +55482,14 @@ MonoBehaviour:
   x4: 0
   z4: 0
   PropertyName: Ubi
-  basicRent: 0
-  setRent: 0
+  cost: 1800
+  basicRent: 140
+  setRent: 280
   rent: 0
   propertyCanvas: {fileID: 1589023449}
+  otherProperties:
+  - {fileID: 268714475}
+  - {fileID: 1268464617}
 --- !u!1 &2015924188
 GameObject:
   m_ObjectHideFlags: 0
@@ -56929,10 +57009,14 @@ MonoBehaviour:
   x4: 0
   z4: 0
   PropertyName: Kovan
-  basicRent: 0
-  setRent: 0
+  cost: 2200
+  basicRent: 180
+  setRent: 360
   rent: 0
   propertyCanvas: {fileID: 2053282074}
+  otherProperties:
+  - {fileID: 463096173}
+  - {fileID: 1850621746}
 --- !u!1 &2095573757
 GameObject:
   m_ObjectHideFlags: 0
