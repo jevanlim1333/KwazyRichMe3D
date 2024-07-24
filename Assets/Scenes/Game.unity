@@ -15002,7 +15002,7 @@ MonoBehaviour:
   PropertyName: Punggol
   cost: 2200
   basicRent: 180
-  setRent: 260
+  setRent: 360
   rent: 0
   propertyCanvas: {fileID: 1597266734}
   otherProperties:
