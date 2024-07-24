@@ -44,7 +44,7 @@ public class NapTime : Tile
         {
             numberOfRoundsSkip--;
             GameScript.instance.chat.SendGameMessage("" + numberOfRoundsSkip + " more rounds");
-            GameScript.instance.chat.SendGameMessage("[GAME] " + PhotonNetwork.LocalPlayer.NickName + "is napping for");
+            GameScript.instance.chat.SendGameMessage("[GAME] " + PhotonNetwork.LocalPlayer.NickName + " is napping for");
         }
         TileManager.instance.FinishedTileAction();
     }

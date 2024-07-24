@@ -13,7 +13,7 @@ public class Toy : Tile
     public int basicRent;
     public int setRent;
     public int rent;
-    public PropertyCanvas propertyCanvas;
+    public ToyCanvas propertyCanvas;
     public Player ownedBy;
     public List<Toy> otherProperties;
 
