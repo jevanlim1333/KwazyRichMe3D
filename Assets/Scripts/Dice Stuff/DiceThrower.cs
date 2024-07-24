@@ -42,7 +42,7 @@ public class DiceThrower : MonoBehaviour
 
     public IEnumerator destroy()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(0.75f);
         if (_spawnedDice.Count != 0)
         {
             foreach (var die in _spawnedDice)

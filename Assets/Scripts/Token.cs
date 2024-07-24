@@ -61,6 +61,18 @@ public class Token : MonoBehaviourPunCallbacks
             if (currPos == 39)
             {
                 currPos = 0;
+                if (stepsToMove > 0) // pass by Breakfast Time
+                {
+                    bones += 2000;
+                    GameScript.instance.chat.SendGameMessage("and received 2000 bones");
+                    GameScript.instance.chat.SendGameMessage("[GAME] " + PhotonNetwork.LocalPlayer.NickName + " passed Breakfast Time ");
+                }
+                else // lands on Breakfast Time
+                {
+                    bones += 3000;
+                    GameScript.instance.chat.SendGameMessage("and received 3000 bones");
+                    GameScript.instance.chat.SendGameMessage("[GAME] " + PhotonNetwork.LocalPlayer.NickName + " landed on Breakfast Time ");
+                } 
             }
             else {
                 currPos++;

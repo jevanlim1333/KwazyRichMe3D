@@ -51,6 +51,8 @@ public class luckywheel : MonoBehaviour
         backgroundCanvasGroup.interactable = true;
         backgroundCanvasGroup.blocksRaycasts = true;
 
+        uiSpinButton.gameObject.SetActive(false);
+        uiSpinButtonText.enabled = false;
 
         Debug.Log("Opening treats canvas now");
     }
@@ -76,4 +78,22 @@ public class luckywheel : MonoBehaviour
         Debug.Log("Closing treats canvas now");
     }
 
+    public void openTreatsToSpin()
+    {
+                wheelCanvas.GetComponent<Canvas>().enabled = true;
+        backgroundCanvas.GetComponent<Canvas>().enabled = true;
+
+        CanvasGroup wheelCanvasGroup = wheelCanvas.GetComponent<CanvasGroup>();
+        CanvasGroup backgroundCanvasGroup = backgroundCanvas.GetComponent<CanvasGroup>();
+
+        wheelCanvasGroup.alpha = 1;
+        wheelCanvasGroup.interactable = true;
+        wheelCanvasGroup.blocksRaycasts = true;
+
+        backgroundCanvasGroup.alpha = 1;
+        backgroundCanvasGroup.interactable = true;
+        backgroundCanvasGroup.blocksRaycasts = true;
+
+        Debug.Log("Opening treats canvas now");
+    }
 }

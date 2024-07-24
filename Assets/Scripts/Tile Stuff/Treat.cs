@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Treat : Tile
 {
+    public luckywheel luckywheelobject;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +18,7 @@ public class Treat : Tile
     }
     public override void TileAction()
     {
+        luckywheelobject.openTreatsToSpin();
         TileManager.instance.FinishedTileAction();
     }
 }

@@ -38,7 +38,7 @@ public class Property : Tile
             bool allOwnedBySamePlayer = true;
             foreach (Property property in otherProperties)
             {
-                if (ownedBy == null) // property unowned
+                if (property.ownedBy == null) // property unowned
                 {
                     allOwnedBySamePlayer = allOwnedBySamePlayer && false;
                 }

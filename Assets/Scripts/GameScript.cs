@@ -24,7 +24,7 @@ public class GameScript : MonoBehaviourPunCallbacks
     public Token playerToken;
     public Button rollDiceButton;
     public bool rolling = false;
-
+    public luckywheel luckyWheel;
     // Start is called before the first frame update
     void Start()
     {
@@ -48,7 +48,14 @@ public class GameScript : MonoBehaviourPunCallbacks
         checkRotation();
         if (currPlayer == PhotonNetwork.LocalPlayer.ActorNumber && rolling == false)
         {
-            rollDiceButton.interactable = true;
+            if (NapTime.instance.numberOfRoundsSkip > 0) // token nap time
+            {
+                NapTime.instance.TileAction();
+            }
+            else // not nap time
+            {  
+                rollDiceButton.interactable = true;
+            }
         }
         else
         {

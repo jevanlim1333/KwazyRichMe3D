@@ -8,8 +8,8 @@ public class TileManager : MonoBehaviourPunCallbacks
 {
     /*
                                     Types of Tiles
-            1. Breakfast Time     2. Property     3. Treasure Box     4. Toy
-            5. Treat              6. Charity      7. Nap Time
+            1. Property     2. Treasure Box     3. Toy
+            5. Treat        5. Charity          6. Nap Time (Property kinda)
     */
     public static TileManager instance;
     public PhotonView view;
