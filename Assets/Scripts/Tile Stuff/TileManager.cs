@@ -36,7 +36,7 @@ public class TileManager : MonoBehaviourPunCallbacks
     [PunRPC]
     public void GetPurchaseProperty(Player player, int tileNumber)
     {
-        Property toPurchase = (Property) GameScript.instance.allRoutes.tilesArray[tileNumber];
+        Toy toPurchase = (Toy) GameScript.instance.allRoutes.tilesArray[tileNumber];
         toPurchase.ownedBy = player;
     }
 
