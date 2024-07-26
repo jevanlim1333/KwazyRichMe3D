@@ -42,7 +42,7 @@ public class Property : Tile
                 {
                     allOwnedBySamePlayer = allOwnedBySamePlayer && false;
                 }
-                if (property.ownedBy == ownedBy) // tpropertyile same owner
+                else if (property.ownedBy.Equals(ownedBy)) // tpropertyile same owner
                 {
                     allOwnedBySamePlayer = allOwnedBySamePlayer && true;
                 }
@@ -68,7 +68,7 @@ public class Property : Tile
         {
             propertyCanvas.Purchasing();
         } 
-        else if (ownedBy != PhotonNetwork.LocalPlayer) // owned by someone else
+        else if (!ownedBy.Equals(PhotonNetwork.LocalPlayer)) // owned by someone else
         {
             SendPropertyRentPayment();
         }
