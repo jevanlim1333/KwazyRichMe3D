@@ -18861,6 +18861,8 @@ MonoBehaviour:
   pickerWheel: {fileID: 499664571}
   wheelCanvas: {fileID: 1170567805}
   backgroundCanvas: {fileID: 698010912}
+  result: 0
+  closeButton: {fileID: 990914954}
 --- !u!1 &536892542
 GameObject:
   m_ObjectHideFlags: 0

@@ -36,6 +36,13 @@ public class TileManager : MonoBehaviourPunCallbacks
     [PunRPC]
     public void GetPurchaseProperty(Player player, int tileNumber)
     {
+        Property toPurchase = (Property) GameScript.instance.allRoutes.tilesArray[tileNumber];
+        toPurchase.ownedBy = player;
+    }
+
+    [PunRPC]
+    public void GetPurchaseToy(Player player, int tileNumber)
+    {
         Toy toPurchase = (Toy) GameScript.instance.allRoutes.tilesArray[tileNumber];
         toPurchase.ownedBy = player;
     }
@@ -47,8 +54,26 @@ public class TileManager : MonoBehaviourPunCallbacks
     }
 
     [PunRPC]
-    public void GetPropertyRentPayment(int rent)
+    public void GetRentPayment(int rent)
     {
         GameScript.instance.playerToken.bones += rent;
+    }
+
+    public void SendTreatResult(int result)
+    {
+        GameScript.instance.playerToken.bones += result;
+        if (result > 0)
+        {
+            GameScript.instance.chat.SendGameMessage("wheel and received " + result + " bones");
+            GameScript.instance.chat.SendGameMessage("[GAME]" + PhotonNetwork.LocalPlayer.NickName + " spinned the lucky" );
+        }
+        else
+        {
+            int lostBones = result * -1;
+            GameScript.instance.chat.SendGameMessage("wheel and lost " + lostBones + " bones");
+            GameScript.instance.chat.SendGameMessage("[GAME]" + PhotonNetwork.LocalPlayer.NickName + " spinned the lucky" );
+        }
+        
+        TileManager.instance.FinishedTileAction();
     }
 }

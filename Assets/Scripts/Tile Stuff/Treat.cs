@@ -19,6 +19,5 @@ public class Treat : Tile
     public override void TileAction()
     {
         luckywheelobject.openTreatsToSpin();
-        TileManager.instance.FinishedTileAction();
     }
 }

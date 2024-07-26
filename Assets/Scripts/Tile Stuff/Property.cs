@@ -92,7 +92,7 @@ public class Property : Tile
         GameScript.instance.playerToken.bones -= rent;
         GameScript.instance.chat.SendGameMessage("and paid " + ownedBy.NickName + " " + rent);
         GameScript.instance.chat.SendGameMessage("[GAME] " + PhotonNetwork.LocalPlayer.NickName + " landed on " + PropertyName);
-        TileManager.instance.GetComponent<PhotonView>().RPC("GetPropertyRentPayment", ownedBy, rent);
+        TileManager.instance.GetComponent<PhotonView>().RPC("GetRentPayment", ownedBy, rent);
         TileManager.instance.FinishedTileAction();
     }
 

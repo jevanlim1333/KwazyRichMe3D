@@ -13,6 +13,7 @@ public class luckywheel : MonoBehaviour
     public Canvas wheelCanvas;
     public Canvas backgroundCanvas;
     [SerializeField] public int result;
+    public Button closeButton;
 
     void Start()
     {
@@ -29,6 +30,8 @@ public class luckywheel : MonoBehaviour
                 result = wheelPiece.Amount;
                 uiSpinButton.interactable = true;
                 uiSpinButtonText.text = "Spin";
+                closeTreats();
+                TileManager.instance.SendTreatResult(result);
             });
             pickerWheel.Spin();
         });
@@ -82,7 +85,7 @@ public class luckywheel : MonoBehaviour
 
     public void openTreatsToSpin()
     {
-                wheelCanvas.GetComponent<Canvas>().enabled = true;
+        wheelCanvas.GetComponent<Canvas>().enabled = true;
         backgroundCanvas.GetComponent<Canvas>().enabled = true;
 
         CanvasGroup wheelCanvasGroup = wheelCanvas.GetComponent<CanvasGroup>();
@@ -95,6 +98,7 @@ public class luckywheel : MonoBehaviour
         backgroundCanvasGroup.alpha = 1;
         backgroundCanvasGroup.interactable = true;
         backgroundCanvasGroup.blocksRaycasts = true;
+        closeButton.gameObject.SetActive(false); // cant close
 
         Debug.Log("Opening treats canvas now");
     }
