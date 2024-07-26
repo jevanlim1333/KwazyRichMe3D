@@ -42,7 +42,7 @@ public class Property : Tile
                 {
                     allOwnedBySamePlayer = allOwnedBySamePlayer && false;
                 }
-                else if (property.ownedBy.Equals(ownedBy)) // tpropertyile same owner
+                else if (property.ownedBy.Equals(ownedBy)) // property same owner
                 {
                     allOwnedBySamePlayer = allOwnedBySamePlayer && true;
                 }
@@ -54,11 +54,11 @@ public class Property : Tile
 
             if (allOwnedBySamePlayer) // all owned by same player
             {
-                rent = basicRent;
+                rent = setRent;
             }
             else // not all owned by same player
             {
-                rent = setRent;
+                rent = basicRent;
             }
         }
     }

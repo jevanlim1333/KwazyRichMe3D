@@ -64,7 +64,9 @@ public class ToyCanvas : MonoBehaviour
         canvasGroup.alpha = 1;
         canvasGroup.interactable = true;
         canvasGroup.blocksRaycasts = true;
-        closeButton.gameObject.SetActive(false); // cannot close canvas
+        purchaseButton.gameObject.SetActive(true); // cannot see purchase button
+        dontPurchaseButton.gameObject.SetActive(true); // cannot see dont purchase button
+        closeButton.gameObject.SetActive(false); // can see close button
 
         if (GameScript.instance.playerToken.bones < toy.cost)
         {
