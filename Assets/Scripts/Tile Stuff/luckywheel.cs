@@ -12,7 +12,8 @@ public class luckywheel : MonoBehaviour
     [SerializeField] private PickerWheel pickerWheel;
     public Canvas wheelCanvas;
     public Canvas backgroundCanvas;
-    // Start is called before the first frame update 
+    [SerializeField] public int result;
+
     void Start()
     {
         uiSpinButton.onClick.AddListener (() => { 
@@ -25,6 +26,7 @@ public class luckywheel : MonoBehaviour
 
             pickerWheel.OnSpinEnd(wheelPiece => {
                 Debug.Log("Spin end: Label:" + wheelPiece.Label + " , Amount:" + wheelPiece.Amount);
+                result = wheelPiece.Amount;
                 uiSpinButton.interactable = true;
                 uiSpinButtonText.text = "Spin";
             });
