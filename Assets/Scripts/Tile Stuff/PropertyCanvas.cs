@@ -65,6 +65,11 @@ public class PropertyCanvas : MonoBehaviour
         canvasGroup.interactable = true;
         canvasGroup.blocksRaycasts = true;
         closeButton.gameObject.SetActive(false); // cannot close canvas
+
+        if (GameScript.instance.playerToken.bones < property.cost)
+        {
+            purchaseButton.interactable = false;
+        }
     }
 
     public void PurchaseProperty()
