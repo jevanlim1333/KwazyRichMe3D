@@ -4,9 +4,8 @@ using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
 
-public class PlusBonesCard : Card
+public class DiceMultiplierScript : Card
 {
-    public int bones;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,11 +17,12 @@ public class PlusBonesCard : Card
     {
         
     }
-
     public override void CardAction()
     {
-        GameScript.instance.playerToken.bones += bones;
-        GameScript.instance.chat.SendGameMessage("box and received " + bones + "  bones");
+        int mutiplier = GameScript.instance.dice1result + GameScript.instance.dice2result;
+        int bonesToReceive = 500 * mutiplier;
+        GameScript.instance.playerToken.bones += bonesToReceive;
+        GameScript.instance.chat.SendGameMessage("box and received " + bonesToReceive + "  bones");
         GameScript.instance.chat.SendGameMessage("[GAME] " + PhotonNetwork.LocalPlayer.NickName + " opened a Treasure");
         TileManager.instance.FinishedTileAction();
     }

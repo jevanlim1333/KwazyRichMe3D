@@ -51,6 +51,7 @@ public class TileManager : MonoBehaviourPunCallbacks
     {     
         GameScript.instance.GetComponent<PhotonView>().RPC("SetNextPlayer", RpcTarget.All);
         GameScript.instance.GetComponent<PhotonView>().RPC("SetRolling", RpcTarget.All, false);
+        GameScript.instance.chat.SendGameMessage("[GAME] " + PhotonNetwork.LocalPlayer.NickName + " end their turn");
     }
 
     [PunRPC]

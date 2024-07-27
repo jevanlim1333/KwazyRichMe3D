@@ -2,10 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TreasureBox : Tile
+public class NapTimeScript : Card
 {
-    public TreasureBoxCanvas treasureBoxCanvas;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -17,9 +15,9 @@ public class TreasureBox : Tile
     {
         
     }
-    public override void TileAction()
+    public override void CardAction()
     {
-        treasureBoxCanvas.SelectCard();
-        //TileManager.instance.FinishedTileAction();
+        GameScript.instance.playerToken.currPos = 20;
+        GameScript.instance.allRoutes.tilesArray[20].TileAction();
     }
 }
