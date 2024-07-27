@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TreasureBox : Tile
+public abstract class Card : MonoBehaviour
 {
-    public List<Card> listOfCards;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,8 +15,6 @@ public class TreasureBox : Tile
     {
         
     }
-    public override void TileAction()
-    {
-        TileManager.instance.FinishedTileAction();
-    }
+
+    public abstract void CardAction();
 }
