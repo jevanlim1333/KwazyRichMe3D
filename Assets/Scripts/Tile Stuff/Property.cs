@@ -81,7 +81,7 @@ public class Property : Tile
     public void SendPurchaseProperty()
     {
         GameScript.instance.playerToken.bones -= cost;
-        GameScript.instance.chat.SendGameMessage("" + PropertyName + " for " + cost);
+        GameScript.instance.chat.SendGameMessage("" + PropertyName + " for " + cost + " bones");
         GameScript.instance.chat.SendGameMessage("[GAME] " + PhotonNetwork.LocalPlayer.NickName + " purchased ");
         TileManager.instance.GetComponent<PhotonView>().RPC("GetPurchaseProperty", RpcTarget.All, PhotonNetwork.LocalPlayer, tileNumber);
         TileManager.instance.FinishedTileAction();
@@ -90,7 +90,7 @@ public class Property : Tile
     public void SendPropertyRentPayment()
     {
         GameScript.instance.playerToken.bones -= rent;
-        GameScript.instance.chat.SendGameMessage("and paid " + ownedBy.NickName + " " + rent);
+        GameScript.instance.chat.SendGameMessage("and paid " + ownedBy.NickName + " " + rent + " bones");
         GameScript.instance.chat.SendGameMessage("[GAME] " + PhotonNetwork.LocalPlayer.NickName + " landed on " + PropertyName);
         TileManager.instance.GetComponent<PhotonView>().RPC("GetRentPayment", ownedBy, rent);
         TileManager.instance.FinishedTileAction();

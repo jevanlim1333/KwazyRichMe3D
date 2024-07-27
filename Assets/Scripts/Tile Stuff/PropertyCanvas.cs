@@ -82,6 +82,7 @@ public class PropertyCanvas : MonoBehaviour
 
     public void DontPurchaseProperty()
     {
+        purchaseButton.interactable = true;
         closeCanvas();
         TileManager.instance.FinishedTileAction();
     }

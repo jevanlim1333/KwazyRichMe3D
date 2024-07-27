@@ -19,6 +19,7 @@ public class TreasureBox : Tile
     }
     public override void TileAction()
     {
+        Debug.Log("Treasure Box Tile Action");
         treasureBoxCanvas.SelectCard();
         //TileManager.instance.FinishedTileAction();
     }

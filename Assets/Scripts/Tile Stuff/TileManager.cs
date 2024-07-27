@@ -51,7 +51,6 @@ public class TileManager : MonoBehaviourPunCallbacks
     {     
         GameScript.instance.GetComponent<PhotonView>().RPC("SetNextPlayer", RpcTarget.All);
         GameScript.instance.GetComponent<PhotonView>().RPC("SetRolling", RpcTarget.All, false);
-        GameScript.instance.chat.SendGameMessage("[GAME] " + PhotonNetwork.LocalPlayer.NickName + " end their turn");
     }
 
     [PunRPC]
@@ -66,13 +65,13 @@ public class TileManager : MonoBehaviourPunCallbacks
         if (result > 0)
         {
             GameScript.instance.chat.SendGameMessage("wheel and received " + result + " bones");
-            GameScript.instance.chat.SendGameMessage("[GAME]" + PhotonNetwork.LocalPlayer.NickName + " spinned the lucky" );
+            GameScript.instance.chat.SendGameMessage("[GAME] " + PhotonNetwork.LocalPlayer.NickName + " spinned the lucky" );
         }
         else
         {
             int lostBones = result * -1;
             GameScript.instance.chat.SendGameMessage("wheel and lost " + lostBones + " bones");
-            GameScript.instance.chat.SendGameMessage("[GAME]" + PhotonNetwork.LocalPlayer.NickName + " spinned the lucky" );
+            GameScript.instance.chat.SendGameMessage("[GAME] " + PhotonNetwork.LocalPlayer.NickName + " spinned the lucky" );
         }
         
         TileManager.instance.FinishedTileAction();

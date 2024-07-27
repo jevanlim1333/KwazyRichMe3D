@@ -5,7 +5,7 @@ using Photon.Pun;
 using Photon.Realtime;
 using System.Threading.Tasks;
 using UnityEngine.UI;
-
+using TMPro;
 public class GameScript : MonoBehaviourPunCallbacks
 {
     public static GameScript instance;
@@ -25,6 +25,9 @@ public class GameScript : MonoBehaviourPunCallbacks
     public Button rollDiceButton;
     public bool rolling = false;
     public luckywheel luckyWheel;
+    public bool lostGame = false;
+    public Text lostGameText;
+    public TMP_Text roomName;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,7 +39,8 @@ public class GameScript : MonoBehaviourPunCallbacks
         {
             Destroy(gameObject);
         }
-
+        roomName.text = "ROOM NAME: " + PhotonNetwork.CurrentRoom.Name;
+        lostGameText.enabled = false;
         int tokenNumber = PhotonNetwork.LocalPlayer.ActorNumber;
         playerGameObject = PhotonNetwork.Instantiate(tokenPrefabs[tokenNumber - 1], spawnpoints[tokenNumber - 1].GetComponent<Transform>().position, Quaternion.identity);
         playerToken = playerGameObject.GetComponent<Token>();
@@ -46,9 +50,18 @@ public class GameScript : MonoBehaviourPunCallbacks
     void Update()
     {
         checkRotation();
+        if (lostGame)
+        {
+            lostGameText.enabled = true;
+        }
         if (currPlayer == PhotonNetwork.LocalPlayer.ActorNumber && rolling == false)
         {
-            if (NapTime.instance.numberOfRoundsSkip > 0) // token nap time
+            CurrentPlayerRPC.instance.SendCurrentPlayerInfo();
+            if (lostGame)
+            {
+                SetNextPlayer();
+            }
+            else if (NapTime.instance.numberOfRoundsSkip > 0) // token nap time
             {
                 NapTime.instance.TileAction();
             }

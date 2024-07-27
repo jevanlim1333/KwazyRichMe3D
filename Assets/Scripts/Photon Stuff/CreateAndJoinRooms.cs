@@ -21,7 +21,6 @@ public class CreateAndJoinRooms : MonoBehaviourPunCallbacks
     {
         // #Critical: we failed to join a random room, maybe none exists or they are all full. No worries, we create a new room.
         PhotonNetwork.NickName = playerNickname.text;
-
         RoomOptions roomOptions = new RoomOptions();
         roomOptions.MaxPlayers = maxPlayersPerRoom;
         PhotonNetwork.CreateRoom(createInput.text, roomOptions);

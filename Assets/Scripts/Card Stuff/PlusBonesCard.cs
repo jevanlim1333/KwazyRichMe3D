@@ -21,6 +21,7 @@ public class PlusBonesCard : Card
 
     public override void CardAction()
     {
+        Debug.Log("Plus Bones Card Action");
         GameScript.instance.playerToken.bones += bones;
         GameScript.instance.chat.SendGameMessage("box and received " + bones + "  bones");
         GameScript.instance.chat.SendGameMessage("[GAME] " + PhotonNetwork.LocalPlayer.NickName + " opened a Treasure");
