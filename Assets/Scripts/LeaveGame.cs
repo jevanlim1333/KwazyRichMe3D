@@ -35,7 +35,7 @@ public class LeaveGame : MonoBehaviour
 
     public IEnumerator PauseBeforeLeaving()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(0.1f);
         PhotonNetwork.LeaveRoom();
         SceneManager.LoadScene("Launcher");
     }

@@ -6,6 +6,7 @@ using Photon.Realtime;
 using System.Threading.Tasks;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 public class GameScript : MonoBehaviourPunCallbacks
 {
     public static GameScript instance;
@@ -28,6 +29,10 @@ public class GameScript : MonoBehaviourPunCallbacks
     public bool lostGame = false;
     public Text lostGameText;
     public TMP_Text roomName;
+    public bool gameEnded;
+    public Scoreboard scoreboard;
+    public Canvas winnerCanvas;
+    public LeaveGame leaveGame;
     
     // Start is called before the first frame update
     void Start()
@@ -51,11 +56,17 @@ public class GameScript : MonoBehaviourPunCallbacks
     void Update()
     {
         checkRotation();
+
+        if (gameEnded)
+        {
+            rollDiceButton.interactable = false;
+        }
+
         if (lostGame)
         {
             lostGameText.enabled = true;
         }
-        if (currPlayer == PhotonNetwork.LocalPlayer.ActorNumber && rolling == false)
+        if (currPlayer == PhotonNetwork.LocalPlayer.ActorNumber && rolling == false && gameEnded == false)
         {
             CurrentPlayerRPC.instance.SendCurrentPlayerInfo();
             if (lostGame)
@@ -94,6 +105,8 @@ public class GameScript : MonoBehaviourPunCallbacks
     {
         PhotonNetwork.CurrentRoom.IsOpen = false;
         PhotonNetwork.CurrentRoom.IsVisible = false;
+        scoreboard.GetComponent<PhotonView>().RPC("SetUpWinnerCounter", RpcTarget.All);
+
         GetComponent<PhotonView>().RPC("SetRolling", RpcTarget.All, true);
         Debug.Log("GameScript Roll Dice Called");
         dt1.RollDice();
@@ -145,6 +158,26 @@ public class GameScript : MonoBehaviourPunCallbacks
     [PunRPC]
     public void SomeoneLeftGame()
     {
-        rollDiceButton.interactable = false;
+        gameEnded = true;
+    }
+
+    public void IWon()
+    {
+        GetComponent<PhotonView>().RPC("SomeoneWon", RpcTarget.All, PhotonNetwork.LocalPlayer.NickName);
+    }
+
+    [PunRPC]
+    public void SomeoneWon(string name)
+    {
+        winnerCanvas.transform.Find("Winner Text").GetComponent<TMP_Text>().text = "" + name + " has won the game!";
+        winnerCanvas.gameObject.SetActive(true);
+        StartCoroutine(EndGame());
+    }
+
+    public IEnumerator EndGame()
+    {
+        yield return new WaitForSeconds(10f);
+        PhotonNetwork.LeaveRoom();
+        SceneManager.LoadScene("Launcher");
     }
 }

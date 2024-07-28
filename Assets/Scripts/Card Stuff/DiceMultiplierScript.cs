@@ -23,7 +23,7 @@ public class DiceMultiplierScript : Card
         int mutiplier = GameScript.instance.dice1result + GameScript.instance.dice2result;
         int bonesToReceive = 500 * mutiplier;
         GameScript.instance.playerToken.bones += bonesToReceive;
-        GameScript.instance.chat.SendGameMessage("box and found " + bonesToReceive + "  bones");
+        GameScript.instance.chat.SendGameMessage("box and found " + bonesToReceive + " bones");
         GameScript.instance.chat.SendGameMessage("[GAME] " + PhotonNetwork.LocalPlayer.NickName + " opened a Treasure");
         TileManager.instance.FinishedTileAction();
     }
