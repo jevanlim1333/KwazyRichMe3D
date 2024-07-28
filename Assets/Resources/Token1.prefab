@@ -52,7 +52,7 @@ MonoBehaviour:
   prefixField: -1
   Synchronization: 3
   OwnershipTransfer: 0
-  observableSearch: 2
+  observableSearch: 0
   ObservedComponents:
   - {fileID: 6172089377526938778}
   sceneViewId: 0
@@ -88,6 +88,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allRoutes: {fileID: 0}
   thisRoute: []
+  bones: 0
+  nickName: 
+  currPos: 0
+  tokenNumber: 0
 --- !u!1001 &4444425188241594022
 PrefabInstance:
   m_ObjectHideFlags: 0

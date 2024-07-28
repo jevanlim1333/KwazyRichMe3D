@@ -4,20 +4,22 @@ using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
 using System.IO;
+using Hashtable = ExitGames.Client.Photon.Hashtable;
 
-public class Token : MonoBehaviour
+public class Token : MonoBehaviourPunCallbacks
 {
     PhotonView view;
-
     public Route allRoutes;
     public List<Vector3> thisRoute;
-    int currPos = 0;
-    int tokenNumber;
+    public int bones;
+    public string nickName;
+    public int currPos = 0;
+    public int tokenNumber;
  
     void Start()
     {
         view = GetComponent<PhotonView>();
-        transform.Rotate(0, 90, 0, Space.Self);
+        bones = 6500;
     }
 
     void Update()
@@ -25,15 +27,12 @@ public class Token : MonoBehaviour
 
     }
 
-    public void setTokenNumber(int i)
+    public void setUpToken(int tokenNumber1, Route route)
     {
-        tokenNumber = i;
-    }
-
-    public void setRoutes(Route r)
-    {
-        allRoutes = r;
-        thisRoute = r.getRoute(tokenNumber);
+        tokenNumber = tokenNumber1;
+        allRoutes = route;
+        thisRoute = route.getRoute(tokenNumber);
+        nickName = PhotonNetwork.NickName;
     }
 
     public void move(int steps)
@@ -62,23 +61,27 @@ public class Token : MonoBehaviour
             if (currPos == 39)
             {
                 currPos = 0;
+                if (stepsToMove > 0) // pass by Breakfast Time
+                {
+                    bones += 2000;
+                    GameScript.instance.chat.SendGameMessage("Breakfast Time and received 2000 bones");
+                    GameScript.instance.chat.SendGameMessage("[GAME] " + PhotonNetwork.LocalPlayer.NickName + " passed");
+                }
+                else // lands on Breakfast Time
+                {
+                    bones += 3000;
+                    GameScript.instance.chat.SendGameMessage("Breakfast Time and received 3000 bones");
+                    GameScript.instance.chat.SendGameMessage("[GAME] " + PhotonNetwork.LocalPlayer.NickName + " landed on");
+                } 
             }
             else {
                 currPos++;
             }
 
-            checkRotation();
             isMoving = false;
         }
         Debug.Log("moved");
-    }
-
-    public void checkRotation()
-    {
-        if (currPos == 0 || currPos == 10 || currPos == 20 || currPos == 30)
-        {
-            transform.Rotate(0, 90, 0, Space.Self);
-        }
+        GameScript.instance.allRoutes.tilesArray[currPos].TileAction();
     }
 
 }
