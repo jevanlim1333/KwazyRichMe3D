@@ -90,6 +90,8 @@ MonoBehaviour:
   thisRoute: []
   bones: 0
   nickName: 
+  currPos: 0
+  tokenNumber: 0
 --- !u!1001 &485010015840615129
 PrefabInstance:
   m_ObjectHideFlags: 0

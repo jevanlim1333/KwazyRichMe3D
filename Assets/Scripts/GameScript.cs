@@ -6,6 +6,7 @@ using Photon.Realtime;
 using System.Threading.Tasks;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 public class GameScript : MonoBehaviourPunCallbacks
 {
     public static GameScript instance;
@@ -28,6 +29,7 @@ public class GameScript : MonoBehaviourPunCallbacks
     public bool lostGame = false;
     public Text lostGameText;
     public TMP_Text roomName;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -91,6 +93,8 @@ public class GameScript : MonoBehaviourPunCallbacks
 
     public void RollDice()
     {
+        PhotonNetwork.CurrentRoom.IsOpen = false;
+        PhotonNetwork.CurrentRoom.IsVisible = false;
         GetComponent<PhotonView>().RPC("SetRolling", RpcTarget.All, true);
         Debug.Log("GameScript Roll Dice Called");
         dt1.RollDice();
@@ -137,5 +141,27 @@ public class GameScript : MonoBehaviourPunCallbacks
     public void SetRolling(bool boolean)
     {
         rolling = boolean;
+    }
+
+    public void SendLeaveRoom()
+    {
+        GetComponent<PhotonView>().RPC("GetLeaveRoom", RpcTarget.All);
+    }
+
+    [PunRPC]
+    public void GetLeaveRoom()
+    {
+        StartCoroutine(DisconnectAndLoad());
+    }
+    public IEnumerator DisconnectAndLoad()
+    {
+        yield return new WaitForSeconds(0.5f);
+        PhotonNetwork.LeaveRoom();
+        PhotonNetwork.Disconnect();
+        while (PhotonNetwork.InRoom || PhotonNetwork.IsConnected)
+        {
+            yield return null;
+        }
+        SceneManager.LoadScene("Launcher");
     }
 }
