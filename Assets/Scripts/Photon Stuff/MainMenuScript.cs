@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using TMPro;
-using System.Threading.Tasks;
-using UnityEngine.UI;
+using Photon.Pun;
+using Photon.Realtime;
 
 public class MainMenu : MonoBehaviour
 {
+    public void Start()
+    {
+        PhotonNetwork.Disconnect();
+    }
     public void Play() 
     {
         SceneManager.LoadScene("loading");

@@ -6,7 +6,6 @@ using Photon.Realtime;
 using System.Threading.Tasks;
 using UnityEngine.UI;
 using TMPro;
-using UnityEngine.SceneManagement;
 public class GameScript : MonoBehaviourPunCallbacks
 {
     public static GameScript instance;
@@ -143,25 +142,9 @@ public class GameScript : MonoBehaviourPunCallbacks
         rolling = boolean;
     }
 
-    public void SendLeaveRoom()
-    {
-        GetComponent<PhotonView>().RPC("GetLeaveRoom", RpcTarget.All);
-    }
-
     [PunRPC]
-    public void GetLeaveRoom()
+    public void SomeoneLeftGame()
     {
-        StartCoroutine(DisconnectAndLoad());
-    }
-    public IEnumerator DisconnectAndLoad()
-    {
-        yield return new WaitForSeconds(0.5f);
-        PhotonNetwork.LeaveRoom();
-        PhotonNetwork.Disconnect();
-        while (PhotonNetwork.InRoom || PhotonNetwork.IsConnected)
-        {
-            yield return null;
-        }
-        SceneManager.LoadScene("Launcher");
+        rollDiceButton.interactable = false;
     }
 }

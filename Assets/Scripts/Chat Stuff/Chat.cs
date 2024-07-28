@@ -28,4 +28,19 @@ public class Chat : MonoBehaviour
         GameObject M = Instantiate(Message, Vector3.zero, Quaternion.identity, Content.transform);
         M.GetComponent<Message>().MyMessage.text = ReceiveMessage;
     }
+
+    // leave game part below
+
+    public void SendLeaveGameMessage(string message)
+    {
+        GetComponent<PhotonView>().RPC("GetLeaveGameMessage", RpcTarget.All, message);
+    }
+
+    [PunRPC]
+    public void GetLeaveGameMessage(string ReceiveMessage)
+    {
+        GameObject M = Instantiate(Message, Vector3.zero, Quaternion.identity, Content.transform);
+        M.GetComponent<Message>().MyMessage.text = ReceiveMessage;
+        M.GetComponent<Message>().MyMessage.color = Color.red;
+    }
 }
